@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "TaskOrbitFont";
+  src: url("./assets/fonts/AlanSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "TaskOrbitFont";
+  color: var(--text-color);
+}
+
+:root{
+  --main-background-color:#fcf1e4;
+  --main-hover-color:#f3e7d9;
+  --brown-color:#a67443;
+  --dark-brown-color:#a57343;
+  --light-brown-color:#b78854;
+  --hover-brown-color:#eddac3;
+  --text-color:#513922;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
