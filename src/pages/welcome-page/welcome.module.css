@@ -1,0 +1,54 @@
+.image {
+  width: 500px;
+}
+
+@media (width <= 768px) {
+  .image {
+    width: 300px;
+  }
+}
+
+.text {
+  font-size: 40px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #654321;
+  width: 0; 
+  background: linear-gradient(
+    120deg,
+    #3e2723 0%,
+    #3e2723 40%,
+    #ffffff 50%,
+    #3e2723 60%,
+    #3e2723 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite, shine 2.5s 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #654321 }
+}
+
+@media (width <= 768px) {
+  .text {
+    font-size: 22px;
+  }
+}
