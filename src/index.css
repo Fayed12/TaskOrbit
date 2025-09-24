@@ -28,8 +28,18 @@
   --text-color:#513922;
 }
 
+.pages{
+  background-color: var(--hover-brown-color);
+  width: 100%;
+  height: calc(100dvh - 80px);
+}
+
 ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+ul li .active{
+    color: var(--brown-color);
 }
