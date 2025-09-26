@@ -3,7 +3,8 @@ import { useState } from "react";
 
 // local
 import "./loginPage.css";
-import SignStatus from "../../components/sign-status/signStatus";
+import SignUp from "../../components/signUp";
+import SignIn from "../../components/signIn";
 
 function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -32,7 +33,7 @@ function LoginPage() {
             Sign Up
           </button>
         </div>
-        <SignStatus isSignUp={isSignUp}></SignStatus>
+              {isSignUp? <SignUp/> :<SignIn/> }
         {!isSignUp && <p className="forgot">Forgot Password?</p>}
       </div>
     </div>

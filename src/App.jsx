@@ -9,6 +9,9 @@ import MainPageLayout from "./layouts/mainPageLayout";
 import { RouterProvider } from "react-router";
 import { router } from "./routes/mainRouts";
 
+// toaster
+import { Toaster } from "react-hot-toast";
+
 
 // ==================================================================================================
 function App() {
@@ -33,12 +36,50 @@ function App() {
       {isOpen ? (
         <WelcomePage />
       ) : (
-        <RouterProvider router={router}>
-          <MainPageLayout />
-        </RouterProvider>
+          <>
+        <RouterProvider router={router}/>
+        <ToasterStyle />
+          </>
       )}
     </>
   );
 }
 
 export default App
+
+// toast component
+function ToasterStyle() {
+  return (
+    <>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "var(--brown-color)",
+            color: "white",
+            borderRadius: "8px",
+            padding: "10px 16px",
+          },
+          success: {
+            style: {
+              background: "var(--light-brown-color)",
+              color: "white",
+            },
+          },
+          error: {
+            style: {
+              background: "var(--dark-brown-color)",
+              color: "white",
+            },
+          },
+          loading: {
+            style: {
+              background: "var(--hover-brown-color)",
+              color: "var(--text-color)",
+            },
+          },
+        }}
+      />
+    </>
+  );
+}

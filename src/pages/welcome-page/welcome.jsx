@@ -7,7 +7,7 @@ function WelcomePage() {
           className={`welcome-page w-full h-[100dvh] flex flex-col justify-center items-center`}
         >
           <img
-            src="/TaskOrbit-logo.png"
+            src="/TaskOrbit.png"
             alt="logo image"
             className={style.image}
           />
