@@ -1,6 +1,9 @@
 // react
 import { useState } from "react";
 
+// react router
+import { useNavigate } from "react-router";
+
 // local
 import MainInput from "./input";
 import toast from "react-hot-toast";
@@ -11,8 +14,7 @@ const initialLink = "http://localhost:5000/users";
 
 // =================================================================================================
 function SignIn({ setOpenLoading }) {
-  // redirect the user to the dashboard system
-
+  const navigate = useNavigate();
   const [userFormData, setUserFormData] = useState(initialUser);
 
   // fetch all users from API
@@ -48,9 +50,11 @@ function SignIn({ setOpenLoading }) {
         setUserFormData(initialUser);
         setTimeout(() => {
           setOpenLoading(true);
+          sessionStorage.setItem("isLoggedIn", true)
         }, 1000);
         setTimeout(() => {
           setOpenLoading(false);
+          navigate("/dashboard" , {replace:true});
         }, 3000);
       }
     } catch (err) {

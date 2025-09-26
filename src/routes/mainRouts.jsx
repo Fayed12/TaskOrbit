@@ -7,6 +7,8 @@ import AboutPage from "../pages/about-page/aboutPage";
 import LoginPage from "../pages/login-page/loginPage";
 import MainPageLayout from "../layouts/mainPageLayout";
 import ForgotPassword from "../components/forget-password/forgetPassword";
+import MainDashboardLayout from "../layouts/mainDashboardLayout";
+import ProtectedRoute from "./protectedRoute";
 
 export const router = createBrowserRouter([
   {
@@ -35,4 +37,12 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute>
+        <MainDashboardLayout/>
+      </ProtectedRoute>
+    )
+  }
 ]);
