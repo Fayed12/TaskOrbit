@@ -43,3 +43,16 @@ ul{
 ul li .active{
     color: var(--brown-color);
 }
+
+::-webkit-scrollbar{
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--hover-brown-color);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--dark-brown-color);
+  border-radius: 10px;
+}

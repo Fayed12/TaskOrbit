@@ -6,7 +6,7 @@ function NavBar() {
       <>
         <div className={`${style.navBar} flex justify-between items-center`}>
           <div className="logo">
-            <img src="/TaskOrbit-logo.png" alt="logo image" />
+            <img src="/TaskOrbit.png" alt="logo image" />
           </div>
           <div className="links">
             <ul className=" flex justify-center items-center gap-[15px]">
