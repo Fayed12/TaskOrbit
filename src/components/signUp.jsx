@@ -24,19 +24,25 @@ function SignUp() {
   // 1-ensure that all fields are filled in.
   function filedFilledIN() {
     if (!newUser.name) {
-      toast.error("please enter your name" , {id:"signUp-toast"});
+      toast.error("please write your name", { id: "signUp-toast" });
       return false;
     }
     if (!newUser.email) {
-      toast.error("please enter your email", { id: "signUp-toast" });
+      toast.error("please write your email", { id: "signUp-toast" });
       return false;
     }
     if (!newUser.password) {
-      toast.error("please enter your password", { id: "signUp-toast" });
+      toast.error("please write your password", { id: "signUp-toast" });
       return false;
     }
     if (!confirmPass) {
       toast.error("please confirm your password", { id: "signUp-toast" });
+      return false;
+    }
+    if (newUser.password.length<8) {
+      toast.error("The minimum length for text is eight characters.", {
+        id: "signUp-toast",
+      });
       return false;
     }
     return true;
@@ -48,13 +54,13 @@ function SignUp() {
 
   function handleRegex() {
     if (!nameRegex.test(newUser.name)) {
-      toast.error("please enter valid name only 2 words, ex.'mohamed fayed' ", {
+      toast.error("please write valid name only 2 words, ex.'mohamed fayed' ", {
         id: "signUp-toast",
       });
       return false
     }
     if (!emailRegex.test(newUser.email)) {
-      toast.error("please enter valid email , ex.'example@gmail.com ' ", {
+      toast.error("please write valid email , ex.'example@gmail.com ' ", {
         id: "signUp-toast",
       });
       return false
@@ -65,7 +71,7 @@ function SignUp() {
   // 3-compare password
   function comparePassword() {
     if (confirmPass !== newUser.password) {
-      toast.error("please check you enter a correct confirm password", {
+      toast.error("the password and confirm password you write does not equal", {
         id: "signUp-toast",
       });
       return false;

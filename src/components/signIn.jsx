@@ -38,7 +38,7 @@ function SignIn({ setOpenLoading }) {
       });
 
       if (!userFormData.email || !userFormData.password) {
-        toast.error("please enter your email or password!!", {
+        toast.error("please write your email or password!!", {
           id: "signIn-toast",
         });
       }else if (!foundUser) {

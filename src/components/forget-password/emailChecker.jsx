@@ -13,7 +13,7 @@ import { API_BASE_USER_URL } from "../../config";
 import MainInput from "../input";
 
 // ==================================================================================================
-function EmailChecker({ setOpenNewPassword }) {
+function EmailChecker({ setOpenNewPassword, setUserId }) {
   const [email, setEmail] = useState("");
   const [checkEmail, setCheckEmail] = useState(true);
 
@@ -34,7 +34,8 @@ function EmailChecker({ setOpenNewPassword }) {
       const data = await res.json();
 
       if (data.length > 0 && data[0].email === email) {
-        toast.success("correct email address", { id: "checker-toast" });
+          toast.success("correct email address", { id: "checker-toast" });
+          setUserId(data[0].id)
         setCheckEmail(false);
       } else {
         toast.error("this user does not exist", { id: "checker-toast" });
@@ -60,7 +61,7 @@ function EmailChecker({ setOpenNewPassword }) {
   return (
     <div className={style.all}>
       <div className={style.wrapper}>
-        <h2 className={style.title}>Reset Your Password</h2>
+        <h2 className={style.title}> Write Your Email</h2>
         <form onSubmit={(e) => handleSubmit(e)} className={style.form}>
           <MainInput
             inpType="email"
