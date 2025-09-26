@@ -29,6 +29,12 @@
       "name": "ahmed fayed",
       "email": "ahmed@gmail.com",
       "password": "ahmed@mam"
+    },
+    {
+      "id": 1758905776607,
+      "name": "mara ahmed",
+      "email": "mara@gmail.com",
+      "password": "maramara"
     }
   ],
   "tasks": [

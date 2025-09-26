@@ -7,10 +7,10 @@ import { useNavigate } from "react-router";
 // local
 import MainInput from "./input";
 import toast from "react-hot-toast";
+import { API_BASE_USER_URL } from "../config";
 
 // initial values
 const initialUser = { email: "", password: "" }
-const initialLink = "http://localhost:5000/users";
 
 // =================================================================================================
 function SignIn({ setOpenLoading }) {
@@ -20,7 +20,7 @@ function SignIn({ setOpenLoading }) {
   // fetch all users from API
   async function handleUsers() {
     try {
-      const res = await fetch(`${initialLink}`);
+      const res = await fetch(`${API_BASE_USER_URL}`);
       if (!res.ok) {
         throw new Error("something error in fetching data");
       }
@@ -51,6 +51,7 @@ function SignIn({ setOpenLoading }) {
         setTimeout(() => {
           setOpenLoading(true);
           sessionStorage.setItem("isLoggedIn", true)
+          sessionStorage.setItem("RegisteredUser" , JSON.stringify(foundUser));
         }, 1000);
         setTimeout(() => {
           setOpenLoading(false);
@@ -75,7 +76,7 @@ function SignIn({ setOpenLoading }) {
         inpPlaceholder="example@gmail.com "
         inpValue={userFormData.email}
         inpSetValue={(e) =>
-          setUserFormData({ ...userFormData, email: e.target.value })
+          setUserFormData({ ...userFormData, email: e.target.value.trim() })
         }
       />
       <MainInput
@@ -83,7 +84,7 @@ function SignIn({ setOpenLoading }) {
         inpPlaceholder="Password"
         inpValue={userFormData.password}
         inpSetValue={(e) =>
-          setUserFormData({ ...userFormData, password: e.target.value })
+          setUserFormData({ ...userFormData, password: e.target.value.trim() })
         }
       />
       <button type="submit" className="submit-btn">

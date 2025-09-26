@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // local
 import MainInput from "./input";
+import { API_BASE_USER_URL } from "../config"
 
 // toast
 import toast from "react-hot-toast";
@@ -14,7 +15,6 @@ const initialUser = {
   email: "",
   password: "",
 };
-const initialLink = "http://localhost:5000/users";
 
 // ================================================================================================
 function SignUp() {
@@ -82,7 +82,7 @@ function SignUp() {
   // 4-confirm that no user similar
   async function checkUserIsUnique() {
     try {
-      const res = await fetch(`${initialLink}/?email=${newUser.email}`);
+      const res = await fetch(`${API_BASE_USER_URL}/?email=${newUser.email}`);
       if (!res.ok) {
         throw new Error("something error in response!!");
       }
@@ -105,7 +105,7 @@ function SignUp() {
   // 5-post new user to users API
   async function handleAddNewUSer() {
     try {
-      const res = await fetch(initialLink, {
+      const res = await fetch(API_BASE_USER_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
