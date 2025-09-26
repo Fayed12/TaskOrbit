@@ -5,8 +5,10 @@ import { useState } from "react";
 import "./loginPage.css";
 import SignUp from "../../components/signUp";
 import SignIn from "../../components/signIn";
+import LoadingPage from "../loading-page/loading";
 
 function LoginPage() {
+  const [openLoading, setOpenLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
 
   return (
@@ -33,9 +35,10 @@ function LoginPage() {
             Sign Up
           </button>
         </div>
-              {isSignUp? <SignUp/> :<SignIn/> }
+        {isSignUp ? <SignUp /> : <SignIn setOpenLoading={ setOpenLoading} /> }
         {!isSignUp && <p className="forgot">Forgot Password?</p>}
       </div>
+      {openLoading && <LoadingPage/>}
     </div>
   );
 }

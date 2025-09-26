@@ -6,9 +6,14 @@
 
 ### An advanced platform for managing tasks, whether personal or work-related.
 
+#### please run the server first before run the project
+```bash
+npm run server
+```
 ### -------------------------------------------------------------------------------
 
 ### How to install The software packages and libraries we will use
+### all packages will be install automatically when you write npm install
 
 #### install the react main files
 ```bash
