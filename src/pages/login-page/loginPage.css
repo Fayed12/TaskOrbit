@@ -59,13 +59,6 @@
   gap: 15px;
 }
 
-.auth-form input {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 1rem;
-}
-
 .submit-btn {
   background: var(--brown-color);
   color: white;

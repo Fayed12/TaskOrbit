@@ -6,6 +6,7 @@ import HomePage from "../pages/home-page/homePage";
 import AboutPage from "../pages/about-page/aboutPage";
 import LoginPage from "../pages/login-page/loginPage";
 import MainPageLayout from "../layouts/mainPageLayout";
+import ForgotPassword from "../components/forget-password/forgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -13,20 +14,24 @@ export const router = createBrowserRouter([
     element: <MainPageLayout />,
     children: [
       {
-        index:true,
+        index: true,
         element: <HomePage />,
       },
       {
-        path: "/home",
+        path: "home",
         element: <HomePage />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <AboutPage />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <LoginPage />,
+      },
+      {
+        path: "managePassword",
+        element: <ForgotPassword />,
       },
     ],
   },

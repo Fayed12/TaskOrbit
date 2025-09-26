@@ -1,6 +1,9 @@
 // react
 import { useState } from "react";
 
+// react router
+import { useNavigate } from "react-router";
+
 // local
 import "./loginPage.css";
 import SignUp from "../../components/signUp";
@@ -10,6 +13,7 @@ import LoadingPage from "../loading-page/loading";
 function LoginPage() {
   const [openLoading, setOpenLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <div className="auth-page">
@@ -35,10 +39,14 @@ function LoginPage() {
             Sign Up
           </button>
         </div>
-        {isSignUp ? <SignUp /> : <SignIn setOpenLoading={ setOpenLoading} /> }
-        {!isSignUp && <p className="forgot">Forgot Password?</p>}
+        {isSignUp ? <SignUp /> : <SignIn setOpenLoading={setOpenLoading} />}
+        {!isSignUp && (
+          <p className="forgot" onClick={() => navigate("/managePassword", {replace:true})}>
+            Forgot Password?
+          </p>
+        )}
       </div>
-      {openLoading && <LoadingPage/>}
+      {openLoading && <LoadingPage />}
     </div>
   );
 }

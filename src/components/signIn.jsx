@@ -5,8 +5,8 @@ import { useState } from "react";
 import MainInput from "./input";
 import toast from "react-hot-toast";
 
-  const initialUser = { email: "", password: "" }
-  
+// initial values
+const initialUser = { email: "", password: "" }
 const initialLink = "http://localhost:5000/users";
 
 // =================================================================================================

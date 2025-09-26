@@ -14,9 +14,7 @@ const initialUser = {
   email: "",
   password: "",
 };
-
 const initialLink = "http://localhost:5000/users";
-
 
 // ================================================================================================
 function SignUp() {
