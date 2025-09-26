@@ -92,3 +92,56 @@
 .forgot:hover {
   text-decoration: underline;
 }
+
+
+@media (max-width: 768px) {
+  .auth-box {
+    padding: 28px;
+    max-width: 350px;
+  }
+
+  .auth-box h2 {
+    font-size: 1.6rem;
+  }
+
+  .tabs button {
+    font-size: 1rem;
+  }
+  .forgot {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 10px;
+  }
+
+  .auth-box {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .auth-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .tabs button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .auth-form input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
