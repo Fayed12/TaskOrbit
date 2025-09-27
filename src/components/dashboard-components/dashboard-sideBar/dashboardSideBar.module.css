@@ -1,83 +1,132 @@
-.sideBar{
-    width: 250px;
-    background-color: var(--main-background-color);
-    height: 100dvh;
-    max-height: 100dvh;
-    overflow: auto;
-    position: sticky;
-    left: 0;
-    top: 0;
-    padding: 0;
-    border-right: 2px solid var(--text-color);
+.sideBar {
+  width: 250px;
+  background-color: var(--main-background-color);
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: auto;
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 0;
+  border-right: 2px solid var(--text-color);
+  transition: .4s;
 }
 
-.sideBar .logo{
-    width: 100%;
-    border-bottom: 2px solid var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+.sideBar .logo {
+  width: 100%;
+  height: 75px;
+  border-bottom: 2px solid var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.sideBar .logo img{
-    width: 150px;
+.sideBar .logo img {
+  width: 70%;
 }
 
-.sideBar .links{
-    padding: 20px;
+.sideBar .links {
+  padding: 20px;
 }
 
 .sideBar .links li {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--hover-brown-color);
-    font-size: 1rem;
-    font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--hover-brown-color);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.sideBar .icon{
-    margin-right: 10px;
+.sideBar .icon {
+  margin-right: 10px;
 }
-.sideBar .user{
-    width: 100%;
-    padding-top:10px ;
-    border-top: 2px solid var(--text-color);
+.sideBar .user {
+  width: 100%;
+  padding-top: 10px;
+  border-top: 2px solid var(--text-color);
 }
 
 @media (width <=992px) {
-.sideBar{
+  .sideBar {
     width: 80px;
-}
+  }
 
-.sideBar a{
+  .sideBar a {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.sideBar .icon{
+  }
+  .sideBar .icon {
     margin: 0;
-}
+  }
 
-.sideBar .linkText{
+  .sideBar .linkText {
     display: none;
-}
+  }
 
-.sideBar .logo img{
+  .sideBar .logo {
+    height: 60px;
+  }
+
+  .sideBar .logo img {
     width: 100%;
-}
+  }
 
-.sideBar .links{
+  .sideBar .links {
     padding: 20px;
-}
+  }
 
-.sideBar .user{
+  .sideBar .user {
     width: 100%;
-    padding-top:10px ;
+    padding-top: 10px;
     border-top: 2px solid var(--text-color);
+  }
+
+  .sideBar .user .MuiBox-root {
+    display: none;
+  }
 }
 
-.sideBar .user .MuiBox-root{
+.close{
+  width: 80px !important;
+}
+
+  .close {
+    width: 80px;
+  }
+
+  .close a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .close .icon {
+    margin: 0;
+  }
+
+  .close .linkText {
     display: none;
-}
-}
+  }
+
+  .close .logo {
+    height: 60px;
+  }
+
+  .close .logo img {
+    width: 100%;
+  }
+
+  .close .links {
+    padding: 20px;
+  }
+
+  .close .user {
+    width: 100%;
+    padding-top: 10px;
+    border-top: 2px solid var(--text-color);
+  }
+
+  .close .user .MuiBox-root {
+    display: none;
+  }

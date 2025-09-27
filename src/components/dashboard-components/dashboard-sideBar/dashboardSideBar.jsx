@@ -10,10 +10,10 @@ import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact
 import style from "./dashboardSideBar.module.css";
 import UserInfo from "../../UserInfo";
 
-function DashboardSideBar() {
+function DashboardSideBar({ openSideBar }) {
   return (
     <div
-      className={`${style.sideBar} flex flex-col justify-between items-center`}
+      className={`${style.sideBar} flex flex-col justify-between items-center ${openSideBar? style.close : undefined}`}
     >
       <div className="w-full">
         <div className={style.logo}>

@@ -78,3 +78,9 @@ input:focus {
   border-color: var(--brown-color);
   box-shadow: 0 0 0 3px rgba(138, 90, 59, 0.15);
 }
+
+.nav{
+  position: sticky;
+  top: 0;
+  right: 0;
+}
