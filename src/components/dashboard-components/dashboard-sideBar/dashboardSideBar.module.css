@@ -36,8 +36,48 @@
     font-weight: 700;
 }
 
+.sideBar .icon{
+    margin-right: 10px;
+}
 .sideBar .user{
     width: 100%;
     padding-top:10px ;
     border-top: 2px solid var(--text-color);
+}
+
+@media (width <=992px) {
+.sideBar{
+    width: 80px;
+}
+
+.sideBar a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideBar .icon{
+    margin: 0;
+}
+
+.sideBar .linkText{
+    display: none;
+}
+
+.sideBar .logo img{
+    width: 100%;
+}
+
+.sideBar .links{
+    padding: 20px;
+}
+
+.sideBar .user{
+    width: 100%;
+    padding-top:10px ;
+    border-top: 2px solid var(--text-color);
+}
+
+.sideBar .user .MuiBox-root{
+    display: none;
+}
 }

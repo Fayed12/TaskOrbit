@@ -44,6 +44,14 @@ ul li .active{
     color: var(--brown-color);
 }
 
+ul li .active span{
+    color: var(--brown-color);
+}
+
+ul li .active path{
+    color: var(--brown-color);
+}
+
 ::-webkit-scrollbar{
     width: 7px;
 }

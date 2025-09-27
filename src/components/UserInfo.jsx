@@ -79,22 +79,44 @@ export default function UserInfo() {
         p: 1,
         borderRadius: 2,
         "&:hover": { backgroundColor: "action.hover" },
+        width: "100%",
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-        <Avatar
-          alt={userData.name}
-        />
-        <Box>
-          <Typography variant="subtitle1" fontWeight="bold">
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          overflow: "hidden",
+        }}
+      >
+        <Avatar alt={userData.name} />
+        <Box
+          sx={{
+            display: { xs: "none", sm: "block" },
+            "@media (max-width:200px)": {
+              display: "none",
+            },
+          }}
+        >
+          <Typography
+            variant="subtitle1"
+            fontWeight="bold"
+            noWrap
+            sx={{ maxWidth: 200 }}
+          >
             {userData.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            noWrap
+            sx={{ maxWidth: 200 }}
+          >
             {userData.email}
           </Typography>
         </Box>
       </Box>
-
       <IconButton onClick={handleOpenMenu}>
         <MoreVertIcon />
       </IconButton>
