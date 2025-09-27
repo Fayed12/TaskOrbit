@@ -1,0 +1,20 @@
+1- create main dashboard layout 
+2- create dashboard-navBar
+3- create dashboard-sideBAr
+4- create dashboard-content
+5- in dashboard-navBar =>    1- create button to close and open dashboard 
+                             2- create breadcrumbs next to button
+                             3- create search input in next side of navBar
+                             4- Create a field for entering and displaying dates
+                             5- (optional) create dark mode
+
+6- in dashboard-sideBAr =>   1- create logo in top of the sideBAr and create a border bottom
+                             2- create links (home / statistics / contact us)
+                             3- create user info in bottom of the side bar
+
+                             4- in (Home) => it contain An overview of what you can do on the site and some statistics.
+                             5- in (statistics) => it contain all main statistics of the user and creating task or remove or edite or enything 
+                             6- in (contact us) => it contain a form, it keep user in contact with developer
+                             7- in (user info) => it contain avatar photo, name of the user, his email and he can logout 
+
+7- Each user has uniq tasks and pages
