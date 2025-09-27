@@ -1,0 +1,43 @@
+.sideBar{
+    width: 250px;
+    background-color: var(--main-background-color);
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow: auto;
+    position: sticky;
+    left: 0;
+    top: 0;
+    padding: 0;
+    border-right: 2px solid var(--text-color);
+}
+
+.sideBar .logo{
+    width: 100%;
+    border-bottom: 2px solid var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sideBar .logo img{
+    width: 150px;
+}
+
+.sideBar .links{
+    padding: 20px;
+}
+
+.sideBar .links li {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hover-brown-color);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.sideBar .user{
+    width: 100%;
+    padding-top:10px ;
+    border-top: 2px solid var(--text-color);
+}

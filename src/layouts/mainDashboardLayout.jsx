@@ -7,10 +7,20 @@ import DashboardSideBar from "../components/dashboard-components/dashboard-sideB
 
 
 function MainDashboardLayout() {
-    return (  
-        <>
-        <Outlet/>
-        </>
+    return (
+      <div className="flex">
+        <div className=" side-bar">
+          <DashboardSideBar />
+        </div>
+        <div className="dashboard-content">
+          <div className="nav">
+            <DashboardNavBar />
+          </div>
+          <div className="content">
+                    <Outlet />
+          </div>
+        </div>
+      </div>
     );
 }
 
