@@ -47,7 +47,7 @@ function SignIn({ setOpenLoading }) {
         toast.error("wrong email or password!!", { id: "signIn-toast" });
       } else {
         toast.success("login successful!", { id: "signIn-toast" });
-        setUserFormData(initialUser);
+        // setUserFormData(initialUser);
         setTimeout(() => {
           setOpenLoading(true);
           sessionStorage.setItem("isLoggedIn", true)

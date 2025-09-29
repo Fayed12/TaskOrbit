@@ -1,30 +1,18 @@
-// react
-import { useEffect, useState } from "react";
-
 // local
 import style from "./dashboardHome.module.css"
 import AddTasks from "../../../components/dashboard-components/home-addTasks/addTasks"
 import Tasks from "../../../components/dashboard-components/home-tasks/tasks"
 import TaskContextProvider from "../../../context/tasksContext";
+import { useState } from "react";
 
 function DashboardHome() {
-    const [name, setName] = useState("")
-
-    useEffect(() => {
-        const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));
-        if (userInfo) {
-            setName(userInfo.name.split(" ").at(0));
-        }
-    }, [])
+  const [openAddTask, setOpenAddTask] = useState(false);
     return (
       <div className={`${style.home}`}>
-            <div className={style.welcomeUser}>
-                <h2>hello {name}</h2>
-            </div>
-            <TaskContextProvider>
-            <Tasks />
-            <AddTasks/>
-            </TaskContextProvider>
+        <TaskContextProvider>
+          <Tasks setOpenAddTask={setOpenAddTask} openAddTask={openAddTask} />
+          <AddTasks openAddTask={openAddTask} />
+        </TaskContextProvider>
       </div>
     );
 }

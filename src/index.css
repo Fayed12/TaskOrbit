@@ -84,3 +84,31 @@ input:focus {
   top: 0;
   right: 0;
 }
+
+.content {
+  width: 100%;
+}
+
+/*start task table */
+
+.hide-container{
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.hidden-tasks .title{
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  text-wrap: nowrap;
+}
+
+.MuiChip-label{
+  color: white !important;
+}
+
+.MuiButtonBase-root{
+  cursor: pointer !important;
+}
+
+/*end task table */

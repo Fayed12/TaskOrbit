@@ -1,33 +1,64 @@
+// react
+import { useEffect, useState } from "react";
+
 // MUI
 import AddIcon from "@mui/icons-material/Add";
-import TasksTable from "../../taskTaple";
+import DoDisturbIcon from "@mui/icons-material/DoDisturb";
 
 // local
 import style from "./tasks.module.css";
 import UseTasks from "../../../hooks/tasksCustomHook";
+import TasksTable from "../../taskTaple";
 
-function Tasks() {
+function Tasks({ setOpenAddTask, openAddTask }) {
   const [allTasks] = UseTasks();
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));
+    if (userInfo) {
+      setName(userInfo.name.split(" ").at(0));
+    }
+  }, []);
 
   return (
-    <div className={style.tasksWrapper}>
-      <div className={style.tasksHeader}>
-        <h2 className={style.title}>Tasks</h2>
-        <div className={style.taskInfo}>
-          <span>
-            {allTasks.length} of {allTasks.length} tasks
-          </span>
+    <>
+      <div className={style.taskContent}>
+        <div className={style.welcomeUser}>
+          <h2>
+            hello / <span>{name}</span>
+          </h2>
         </div>
-        <button type="button" className={style.addTaskBtn}>
-          <AddIcon className={style.icon} />
-          Add Task
-        </button>
-      </div>
+        <div className={style.tasksHeader}>
+          <h2 className={style.title}>
+            Tasks / <span>{allTasks.length}</span>
+          </h2>
+          <button
+            type="button"
+            className={style.addTaskBtn}
+            onClick={() => setOpenAddTask((prev) => !prev)}
+          >
+            {!openAddTask ? (
+              <>
+                <AddIcon className={style.icon} />
+                Add Task
+              </>
+            ) : (
+                <>
+                <DoDisturbIcon className={style.icon} />
+                Close
+                </>
+            )}
+          </button>
+        </div>
 
-      <div className={style.tasksBody}>
-        <TasksTable />
+        <div className="flex justify-center">
+          <div className={style.tasksBody}>
+            <TasksTable />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,6 +1,14 @@
 import style from "./addTasks.module.css";
 
-function AddTasks() {
+function AddTasks({ openAddTask }) {
+
+  if (!openAddTask) {
+    return (
+      <div>
+        <h2>Start mange your tasks</h2>
+      </div>
+    )
+  }
   return (
     <>
       <div className={style.addTasks}>
