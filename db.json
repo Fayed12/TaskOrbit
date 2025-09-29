@@ -1,40 +1,22 @@
 {
   "users": [
     {
-      "id": "1758859250429",
+      "id": 1758859250429,
       "name": "Mohamed Fayed",
       "email": "mohamed@mail.com",
       "password": "mohamed123@m"
     },
     {
-      "id": "1758819252439",
+      "id": 1758819252439,
       "name": "Ali Hassan",
       "email": "ali@mail.com",
       "password": "aliAhmedm"
     },
     {
-      "id": "2758859253427",
+      "id": 2758859253427,
       "name": "Sara Ahmed",
       "email": "sara@mail.com",
       "password": "sara#123"
-    },
-    {
-      "id": "1758859255768",
-      "name": "mohamed fayed",
-      "email": "mohamed@gmail.com",
-      "password": "mohamed@ma"
-    },
-    {
-      "id": "1758860556101",
-      "name": "ahmed fayed",
-      "email": "ahmed@gmail.com",
-      "password": "ahmed@mam"
-    },
-    {
-      "id": 1758905776607,
-      "name": "mara ahmed",
-      "email": "mara@gmail.com",
-      "password": "maramara"
     }
   ],
   "tasks": [
@@ -45,7 +27,7 @@
       "completed": false,
       "priority": "high",
       "dueDate": "2025-09-28",
-      "userId": 1
+      "userId": "1758859250429"
     },
     {
       "id": "2",
@@ -54,34 +36,124 @@
       "completed": true,
       "priority": "medium",
       "dueDate": "2025-09-20",
-      "userId": 1
+      "userId": "1758859250429"
     },
     {
       "id": "3",
+      "title": "Write weekly report",
+      "description": "Summarize weekly achievements",
+      "completed": false,
+      "priority": "medium",
+      "dueDate": "2025-10-01",
+      "userId": "1758859250429"
+    },
+    {
+      "id": "4",
+      "title": "Update GitHub repo",
+      "description": "Push latest commits",
+      "completed": true,
+      "priority": "low",
+      "dueDate": "2025-09-27",
+      "userId": "1758859250429"
+    },
+    {
+      "id": "5",
+      "title": "Team meeting",
+      "description": "Discuss next sprint backlog",
+      "completed": false,
+      "priority": "high",
+      "dueDate": "2025-09-30",
+      "userId": "1758859250429"
+    },
+    {
+      "id": "6",
       "title": "Buy groceries",
       "description": "Milk, Bread, Eggs, Fruits",
       "completed": false,
       "priority": "low",
       "dueDate": "2025-09-25",
-      "userId": 2
+      "userId": "1758819252439"
     },
     {
-      "id": "4",
+      "id": "7",
       "title": "Gym workout",
       "description": "Leg day exercises",
       "completed": false,
       "priority": "medium",
       "dueDate": "2025-09-24",
-      "userId": 2
+      "userId": "1758819252439"
     },
     {
-      "id": "5",
+      "id": "8",
+      "title": "Finish reading book",
+      "description": "Complete the last 3 chapters",
+      "completed": false,
+      "priority": "medium",
+      "dueDate": "2025-10-02",
+      "userId": "1758819252439"
+    },
+    {
+      "id": "9",
+      "title": "Prepare presentation",
+      "description": "Slides for Monday meeting",
+      "completed": false,
+      "priority": "high",
+      "dueDate": "2025-10-03",
+      "userId": "1758819252439"
+    },
+    {
+      "id": "10",
+      "title": "Car maintenance",
+      "description": "Oil change and tire rotation",
+      "completed": false,
+      "priority": "low",
+      "dueDate": "2025-09-29",
+      "userId": "1758819252439"
+    },
+    {
+      "id": "11",
       "title": "Book dentist appointment",
       "description": "Schedule appointment for next week",
       "completed": false,
       "priority": "high",
       "dueDate": "2025-09-30",
-      "userId": 3
+      "userId": "2758859253427"
+    },
+    {
+      "id": "12",
+      "title": "Plan weekend trip",
+      "description": "Choose destination and book hotel",
+      "completed": false,
+      "priority": "medium",
+      "dueDate": "2025-10-04",
+      "userId": "2758859253427"
+    },
+    {
+      "id": "13",
+      "title": "Buy birthday gift",
+      "description": "For a friend’s birthday party",
+      "completed": false,
+      "priority": "low",
+      "dueDate": "2025-09-28",
+      "userId": "2758859253427"
+    },
+    {
+      "id": "14",
+      "title": "Grocery shopping",
+      "description": "Vegetables and chicken",
+      "completed": false,
+      "priority": "medium",
+      "dueDate": "2025-10-01",
+      "userId": "2758859253427"
+    },
+    {
+      "id": "15",
+      "title": "Doctor checkup",
+      "description": "Annual health checkup",
+      "completed": false,
+      "priority": "high",
+      "dueDate": "2025-10-05",
+      "userId": "2758859253427"
     }
   ]
 }

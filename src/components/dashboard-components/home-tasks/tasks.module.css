@@ -1,0 +1,61 @@
+.tasksWrapper {
+  background-color: #fff;
+  border: 1px solid #e5e7eb; /* رمادي فاتح */
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tasksHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #f9f9fb; /* خلفية فاتحة زي الهيدر */
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937; /* رمادي غامق */
+  margin: 0;
+}
+
+.taskInfo {
+  font-size: 0.9rem;
+  color: #6b7280; /* رمادي متوسط */
+}
+
+.addTaskBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #0b0b25; /* غامق (ممكن تغيّره للون بتاعك) */
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addTaskBtn:hover {
+  background-color: #1a1a40; /* أفتح شوية */
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.tasksBody {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
