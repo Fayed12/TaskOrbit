@@ -83,6 +83,7 @@ input:focus {
   position: sticky;
   top: 0;
   right: 0;
+  z-index: 10000;
 }
 
 .content {
@@ -111,4 +112,11 @@ input:focus {
   cursor: pointer !important;
 }
 
+.MuiDataGrid-scrollbarContent{
+  height: 4px !important;
+}
+
+.MuiDataGrid-scrollbar {
+  height: 4px !important;
+}
 /*end task table */

@@ -19,12 +19,15 @@ const initialTaskData = {
 }
 function AddTasks({ openAddTask }) {
   const [newTaskData, setNewTaskData] = useState(initialTaskData);
-  const [userInfoId, setUserInfoId] = useState();
+
+  // handle cancel add task
+  function handleCancelButton() {
+    setNewTaskData(initialTaskData)
+  }
 
   useEffect(() => {
     const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));
     if (userInfo) {
-      setUserInfoId(Number(userInfo.id));
       setNewTaskData((prev) => ({ ...prev, userId: Number(userInfo.id) }));
     }
   },[])
@@ -69,6 +72,7 @@ function AddTasks({ openAddTask }) {
             />
             <div className={style.specialInput}>
               <select
+                className={style.selectInput}
                 name="Priority"
                 value={newTaskData.priority}
                 onChange={(e) =>
@@ -78,11 +82,12 @@ function AddTasks({ openAddTask }) {
                   })
                 }
               >
+                <option value="">Select Priority</option>
                 <option value="high">High</option>
                 <option value="medium">Medium</option>
                 <option value="low">Low</option>
               </select>
-              <div>
+              <div className={style.ClearableProp}>
                 <ClearableProp
                   newTaskData={newTaskData}
                   setDateValue={setNewTaskData}
@@ -94,7 +99,9 @@ function AddTasks({ openAddTask }) {
                 <button type="submit">Add Task</button>
               </div>
               <div className={style.cancelAdd}>
-                <button type="submit">Cancel</button>
+                <button type="button" onClick={handleCancelButton}>
+                  Cancel
+                </button>
               </div>
             </div>
           </form>
