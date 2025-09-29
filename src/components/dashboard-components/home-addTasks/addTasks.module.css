@@ -1,165 +1,200 @@
-:root{
-  --main-background-color:#fcf1e4;
-  --main-hover-color:#f3e7d9;
-  --brown-color:#a67443;
-  --dark-brown-color:#865d37;
-  --light-brown-color:#b78854;
-  --hover-brown-color:#eddac3;
-  --text-color:#513922;
+:root {
+  --main-background-color: #fcf1e4;
+  --main-hover-color: #f3e7d9;
+  --brown-color: #a67443;
+  --dark-brown-color: #865d37;
+  --light-brown-color: #b78854;
+  --hover-brown-color: #eddac3;
+  --text-color: #513922;
 }
 
-.addTasks{
-    padding: 10px;
-    background-color: #fbeddc;
-    margin-top: 20px;
-    border: 1px solid var(--brown-color);
-    border-radius: 10px;
+.addTasks {
+  padding: 10px;
+  background-color: #fbeddc;
+  margin-top: 20px;
+  border: 1px solid var(--brown-color);
+  border-radius: 10px;
 }
 
-.addHeader{
-    margin-bottom: 10px;
+.addHeader {
+  margin-bottom: 10px;
 }
 
-.addHeader h1{
-    font-size: 1.3rem;
-    font-weight: 600;
+.addHeader h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
-.addHeader p{
-    font-size: 1rem;
-    color: var(--brown-color);
+.addHeader p {
+  font-size: 0.8rem;
+  color: var(--brown-color);
 }
 
-.addBody{
-    padding: 20px;
-    border: 1px solid var(--brown-color);
-    background-color: white;
-    border-radius: 7px;
-    width: 100%;
+.addBody {
+  padding: 20px;
+  border: 1px solid var(--brown-color);
+  background-color: white;
+  border-radius: 7px;
+  width: 100%;
 }
 
-.addBody form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.addBody form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.addBody form input{
-    margin-bottom: 20px;
+.addBody form input {
+  margin-bottom: 20px;
 }
 
 .addBody .specialInput {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
 .addBody select {
-    padding: 8px 10px;
-    border: 1px solid var(--brown-color);
-    border-radius: 5px;
-    background-color: white;
-    color: var(--text-color);
-    font-size: 1rem;
-    outline: none;
-    transition: background-color 0.2s ease;
-    cursor: pointer;
+  padding: 8px 10px;
+  border: 1px solid var(--brown-color);
+  border-radius: 5px;
+  background-color: white;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
 .addBody select:hover {
-    background-color: var(--main-hover-color);
+  background-color: var(--main-hover-color);
 }
 
 .addBody select:focus {
-    border-color: var(--dark-brown-color);
+  border-color: var(--dark-brown-color);
 }
 
-.Btn{
+.Btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.Btn .successAdd {
+  display: flex;
+  flex: 1;
+}
+
+.Btn .cancelAdd {
+  width: 100px;
+}
+
+.Btn button {
+  background-color: var(--brown-color);
+  color: white;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: 0.4s;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--brown-color);
+}
+
+.Btn .successAdd button:hover {
+  background-color: white;
+  color: var(--text-color);
+}
+
+.Btn .cancelAdd button {
+  color: var(--text-color);
+  background-color: white;
+}
+
+.Btn .cancelAdd button:hover {
+  background-color: var(--dark-brown-color);
+  color: white;
+}
+
+@media (width >= 992px) {
+  .addHeader h1 {
+    font-size: 1.3rem;
+  }
+
+  .addHeader p {
+    font-size: 1rem;
+  }
+
+  .addBody .specialInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .addBody select {
+    width: calc(40% - 15px);
+    padding: 5px 7px;
+    height: 50px;
+  }
+
+  .addBody select:hover {
+    background-color: var(--main-hover-color);
+  }
+
+  .addBody select:focus {
+    border-color: var(--dark-brown-color);
+  }
+
+  .Btn {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-top: 20px;
-}
+  }
 
-.Btn .successAdd{
+  .Btn .successAdd {
     display: flex;
     flex: 1;
+  }
+
+  .Btn .cancelAdd {
+    width: 400px;
+  }
+
+  .ClearableProp {
+    width: calc(60% - 15px);
+  }
 }
 
-.Btn .cancelAdd{
-    width: 100px;
+.hiddenMessage{
+  background-color: var(--main-hover-color);
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--brown-color);
 }
 
-.Btn button {
-    background-color: var(--brown-color);
-    color: white;
-    width: 100%;
-    padding: 5px 10px;
-    border-radius: 6px;
-    transition: .4s;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid var(--brown-color);
+.hiddenMessage h2{
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.Btn .successAdd button:hover{
-    background-color: white;
-    color: var(--text-color);
+@media (width <= 768px) {
+  .hiddenMessage h2{
+    font-size: 1rem;
+  }
 }
 
-.Btn .cancelAdd button{
-    color: var(--text-color);
-    background-color: white;
-}
-
-.Btn .cancelAdd button:hover{
-    background-color: var(--dark-brown-color);
-    color: white;
-}
-
-@media (width >= 992px) {
-
-    .addBody .specialInput {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap:30px;
-    }
-
-    .addBody select {
-        width: calc(40% - 15px);
-        padding: 5px 7px;
-        height: 50px;
-    }
-
-    .addBody select:hover {
-        background-color: var(--main-hover-color);
-    }
-
-    .addBody select:focus {
-        border-color: var(--dark-brown-color);
-    }
-
-    .Btn{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    .Btn .successAdd{
-        display: flex;
-        flex: 1;
-    }
-
-    .Btn .cancelAdd{
-        width: 400px;
-    }
-
-    .ClearableProp{
-                width: calc(60% - 15px);
-    }
+.disabledCancel{
+  cursor: no-drop;
+  color: #999;
+  background-color: #513922;
 }

@@ -55,6 +55,7 @@ function ToasterStyle() {
         position="top-center"
         toastOptions={{
           style: {
+            zIndex:"1001",
             background: "var(--brown-color)",
             color: "white",
             borderRadius: "8px",
