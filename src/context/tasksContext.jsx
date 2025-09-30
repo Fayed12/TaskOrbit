@@ -8,6 +8,7 @@ import { API_BASE_TASKS_URL } from "../config";
 export const tasksContext = createContext();
 
 function TaskContextProvider({ children }) {
+  const [checkedIds, setCheckedIds] = useState([]);
     const [tasks, setTasks] = useState([]);
     const [userID, setUserId] = useState()
 
@@ -35,7 +36,9 @@ function TaskContextProvider({ children }) {
     },[userID])
     
     return (
-      <tasksContext.Provider value={{ tasks, setTasks }}>
+      <tasksContext.Provider
+        value={{ tasks, setTasks, checkedIds, setCheckedIds }}
+      >
         {children}
       </tasksContext.Provider>
     );

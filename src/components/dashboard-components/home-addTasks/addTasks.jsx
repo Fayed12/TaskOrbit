@@ -81,6 +81,24 @@ function AddTasks({ openAddTask }) {
     toast.success("Cancel add this task", { id: "addTask-toast" });
   }
 
+    useEffect(() => {
+      if (
+        newTaskData.title ||
+        newTaskData.priority ||
+        newTaskData.description ||
+        newTaskData.dueDate
+      ) {
+        setOpenCancel(true);
+      } else {
+        setOpenCancel(false);
+      }
+    }, [
+      newTaskData.description,
+      newTaskData.dueDate,
+      newTaskData.priority,
+      newTaskData.title,
+    ]);
+
   useEffect(() => {
     const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));
     if (userInfo) {
@@ -96,7 +114,7 @@ function AddTasks({ openAddTask }) {
     );
   }
   return (
-    <>
+    <div className="flex justify-center items-center">
       <div className={style.addTasks}>
         <div className={style.addHeader}>
           <h1>Add New Task</h1>
@@ -156,7 +174,7 @@ function AddTasks({ openAddTask }) {
               </div>
               <div
                 className={`${style.cancelAdd}  ${
-                  openAddTask ? style.disabledCancel : ""
+                  !openCancel ? style.disabledCancel : ""
                 }`}
               >
                 <button
@@ -171,7 +189,7 @@ function AddTasks({ openAddTask }) {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

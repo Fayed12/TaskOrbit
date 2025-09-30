@@ -1,19 +1,10 @@
-:root {
-  --main-background-color: #fcf1e4;
-  --main-hover-color: #f3e7d9;
-  --brown-color: #a67443;
-  --dark-brown-color: #865d37;
-  --light-brown-color: #b78854;
-  --hover-brown-color: #eddac3;
-  --text-color: #513922;
-}
-
 .addTasks {
   padding: 10px;
   background-color: #fbeddc;
   margin-top: 20px;
   border: 1px solid var(--brown-color);
   border-radius: 10px;
+  width: 290px;
 }
 
 .addHeader {
@@ -31,7 +22,7 @@
 }
 
 .addBody {
-  padding: 20px;
+  padding: 10px;
   border: 1px solid var(--brown-color);
   background-color: white;
   border-radius: 7px;
@@ -119,6 +110,12 @@
   color: white;
 }
 
+@media (width >= 500px){
+  .addTasks{
+    width: 100%;
+  }
+}
+
 @media (width >= 992px) {
   .addHeader h1 {
     font-size: 1.3rem;
@@ -128,6 +125,9 @@
     font-size: 1rem;
   }
 
+  .addBody{
+    padding: 20px;
+  }
   .addBody .specialInput {
     display: flex;
     flex-direction: row;
@@ -193,8 +193,11 @@
   }
 }
 
-.disabledCancel{
+.disabledCancel button{
   cursor: no-drop;
-  color: #999;
-  background-color: #513922;
+  color: #999 !important ;
+}
+
+.disabledCancel button:hover{
+  background-color: white !important;
 }

@@ -76,7 +76,7 @@
 }
 
 /* ---------------- Responsive ---------------- */
-@media( width <=429px)  {
+@media( width <=430px)  {
   .taskContent{
     padding: 10px;
   }
@@ -136,25 +136,13 @@
   }
 }
 
-@media ( width >=893px) and ( width <=999px) {
+@media ( width >=893px) and (max-width: 1200px) {
   .taskContent{
     padding: 10px;
   }
 
   .tasksBody {
-    max-width: 700px;
-    overflow: auto;
-    padding:10px;
-  }
-}
-
-@media ( width >=1000) and ( width <=1200px) {
-  .taskContent{
-    padding: 10px;
-  }
-
-  .tasksBody {
-    max-width: 800px;
+    max-width: 680px;
     overflow: auto;
     padding:10px;
   }
@@ -162,7 +150,7 @@
 
 @media ( width >=1201px){
   .tasksBody {
-    width: 100%;
+    width: fit-content;
   }
 }
 

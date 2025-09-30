@@ -9,7 +9,7 @@ import DashboardNavBar from "../components/dashboard-components/dashboard-navBar
 import DashboardSideBar from "../components/dashboard-components/dashboard-sideBar/dashboardSideBar";
 
 function MainDashboardLayout() {
-    const [openSideBar, setOpenSideBar] = useState(true);
+    const [openSideBar, setOpenSideBar] = useState(false);
   return (
     <div className="flex">
       <div className=" side-bar">

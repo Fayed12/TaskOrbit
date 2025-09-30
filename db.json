@@ -24,7 +24,7 @@
       "id": "1",
       "title": "Finish project plan",
       "description": "Prepare requirements document for TaskOrbit",
-      "completed": false,
+      "completed": true,
       "priority": "high",
       "dueDate": "2025-09-28",
       "userId": "1758859250429"
@@ -33,7 +33,7 @@
       "id": "2",
       "title": "Read new React docs",
       "description": "Check out the latest updates in React 19",
-      "completed": true,
+      "completed": false,
       "priority": "medium",
       "dueDate": "2025-09-20",
       "userId": "1758859250429"
@@ -42,7 +42,7 @@
       "id": "3",
       "title": "Write weekly report",
       "description": "Summarize weekly achievements",
-      "completed": false,
+      "completed": true,
       "priority": "medium",
       "dueDate": "2025-10-01",
       "userId": "1758859250429"
@@ -51,7 +51,7 @@
       "id": "4",
       "title": "Update GitHub repo",
       "description": "Push latest commits",
-      "completed": true,
+      "completed": false,
       "priority": "low",
       "dueDate": "2025-09-27",
       "userId": "1758859250429"
