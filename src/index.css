@@ -65,7 +65,8 @@ ul li .active path{
   border-radius: 10px;
 }
 
-input {
+input ,
+textarea{
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -74,7 +75,8 @@ input {
   transition: all 0.2s ease-in-out;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border-color: var(--brown-color);
   box-shadow: 0 0 0 3px rgba(138, 90, 59, 0.15);
 }

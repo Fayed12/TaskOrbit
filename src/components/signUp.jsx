@@ -148,7 +148,7 @@ function SignUp() {
         inpPlaceholder="Full Name"
         inpValue={newUser.name}
         inpSetValue={(e) =>
-          setNewUser({ ...newUser, name: e.target.value.trim().toLowerCase() })
+          setNewUser({ ...newUser, name: e.target.value.trim()})
         }
       />
       <MainInput
@@ -156,7 +156,7 @@ function SignUp() {
         inpPlaceholder="example@gmail.com "
         inpValue={newUser.email}
         inpSetValue={(e) =>
-          setNewUser({ ...newUser, email: e.target.value.trim().toLowerCase() })
+          setNewUser({ ...newUser, email: e.target.value.trim()})
         }
       />
       <MainInput
