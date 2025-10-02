@@ -7,6 +7,7 @@ import { useState } from "react";
 // local
 import DashboardNavBar from "../components/dashboard-components/dashboard-navBar/dashboardNavBar";
 import DashboardSideBar from "../components/dashboard-components/dashboard-sideBar/dashboardSideBar";
+import Footer from "../components/footer/footer";
 
 // ==================================================================================================================
 function MainDashboardLayout() {
@@ -20,8 +21,9 @@ function MainDashboardLayout() {
         <div className="nav">
           <DashboardNavBar setOpenSideBar={setOpenSideBar} />
         </div>
-        <div className="content">
+        <div className="content relative">
           <Outlet />
+          <Footer/>
         </div>
       </div>
     </div>

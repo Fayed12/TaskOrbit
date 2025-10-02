@@ -84,7 +84,6 @@
 
 @media (width <= 992px) {
   .navBar {
-    height: 60px;
     padding:5px 7px;
   }
 
