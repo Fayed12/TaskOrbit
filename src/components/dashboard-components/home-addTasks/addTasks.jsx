@@ -14,7 +14,7 @@ import { API_BASE_TASKS_URL } from "../../../config";
 import UseTasks from "../../../hooks/tasksCustomHook";
 
 const initialTaskData = {
-  id: Date.now(),
+  id: String(Date.now()),
   title: "",
   description: "",
   completed: false,
@@ -102,7 +102,7 @@ function AddTasks({ openAddTask }) {
   useEffect(() => {
     const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));
     if (userInfo) {
-      setNewTaskData((prev) => ({ ...prev, userId: Number(userInfo.id) }));
+      setNewTaskData((prev) => ({ ...prev, userId: String(userInfo.id) }));
     }
   }, []);
 

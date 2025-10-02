@@ -16,7 +16,7 @@ function UseTasks() {
     // update function
     async function updateData(id,updatingData) {
         try {
-          const res = await fetch(`${API_BASE_TASKS_URL}/${id}`, {
+          const res = await fetch(`${API_BASE_TASKS_URL}/${String(id)}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatingData),
