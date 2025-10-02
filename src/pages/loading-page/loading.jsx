@@ -1,5 +1,7 @@
+// local
 import styles from "./loading.module.css";
 
+// ==================================================================================================================
 function LoadingPage() {
 return (
   <div className={styles.wrapper} role="status" aria-live="polite">

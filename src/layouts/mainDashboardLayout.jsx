@@ -8,6 +8,7 @@ import { useState } from "react";
 import DashboardNavBar from "../components/dashboard-components/dashboard-navBar/dashboardNavBar";
 import DashboardSideBar from "../components/dashboard-components/dashboard-sideBar/dashboardSideBar";
 
+// ==================================================================================================================
 function MainDashboardLayout() {
     const [openSideBar, setOpenSideBar] = useState(false);
   return (

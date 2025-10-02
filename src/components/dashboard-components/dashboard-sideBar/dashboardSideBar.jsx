@@ -10,6 +10,7 @@ import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact
 import style from "./dashboardSideBar.module.css";
 import UserInfo from "../../UserInfo";
 
+// ==================================================================================================================
 function DashboardSideBar({ openSideBar }) {
   return (
     <div

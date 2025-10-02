@@ -12,7 +12,6 @@ import { router } from "./routes/mainRouts";
 // toaster
 import { Toaster } from "react-hot-toast";
 
-
 // ==================================================================================================
 function App() {
   // is the welcome message opened or not start with true then become false

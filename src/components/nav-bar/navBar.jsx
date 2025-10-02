@@ -1,6 +1,10 @@
+// react router
 import { NavLink } from "react-router";
+
+// local
 import style from "./navBar.module.css"
 
+// ==================================================================================================================
 function NavBar() {
     return (
       <>

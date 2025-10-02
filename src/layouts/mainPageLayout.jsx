@@ -4,6 +4,7 @@ import { Outlet } from "react-router";
 // local imports
 import NavBar from "../components/nav-bar/navBar";
 
+// ==================================================================================================================
 function MainPageLayout() {
   return (
     <>

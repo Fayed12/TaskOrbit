@@ -6,6 +6,7 @@ import AnalyticsIcon from "@mui/icons-material/Analytics";
 // local imports
 import style from "./aboutPage.module.css";
 
+// ==================================================================================================================
 function AboutPage() {
   return (
     <div className={style.aboutPage}>

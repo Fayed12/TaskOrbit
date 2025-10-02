@@ -1,6 +1,10 @@
+// react router
 import { NavLink } from "react-router";
+
+// react
 import style from "./homePage.module.css";
 
+// ==================================================================================================================
 function HomePage() {
   return (
     <div className={style.homePage}>

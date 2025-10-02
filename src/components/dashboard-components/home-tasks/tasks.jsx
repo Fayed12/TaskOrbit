@@ -10,6 +10,7 @@ import style from "./tasks.module.css";
 import UseTasks from "../../../hooks/tasksCustomHook";
 import TasksTable from "../../taskTaple";
 
+// ==================================================================================================================
 function Tasks({ setOpenAddTask, openAddTask }) {
   const [allTasks] = UseTasks();
   const [name, setName] = useState("");

@@ -1,4 +1,4 @@
-import * as React from "react";
+// MUI
 import { DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -7,10 +7,13 @@ import dayjs from "dayjs";
 import Box from "@mui/material/Box";
 import Alert from "@mui/material/Alert";
 
-export default function ClearableProp({ newTaskData, setDateValue }) {
-  const [cleared, setCleared] = React.useState(false);
+// react
+import { useState, useEffect } from "react";
 
-  React.useEffect(() => {
+export default function ClearableProp({ newTaskData, setDateValue }) {
+  const [cleared, setCleared] = useState(false);
+
+  useEffect(() => {
     if (cleared) {
       const timeout = setTimeout(() => {
         setCleared(false);
