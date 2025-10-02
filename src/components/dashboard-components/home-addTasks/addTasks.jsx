@@ -109,7 +109,7 @@ function AddTasks({ openAddTask }) {
   if (!openAddTask) {
     return (
       <div className={style.hiddenMessage}>
-        <h2>Start mange your tasks</h2>
+        <h2>Start Adding your tasks here</h2>
       </div>
     );
   }

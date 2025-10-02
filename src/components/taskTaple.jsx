@@ -10,10 +10,11 @@ import UseTasks from "../hooks/tasksCustomHook";
 import style from "./dashboard-components/home-tasks/tasks.module.css";
 
 function TasksTable() {
-  const [allTasks, , , , updateData] = UseTasks();
+  const [allTasks, , updateData] = UseTasks();
   const [hideTasks, setHideTask] = useState(false);
   const apiRef = useGridApiRef();
 
+  // function update data
   function handleUpdateValue(selectedRows) {
     selectedRows.forEach((task) => {
       updateData(task.id, {

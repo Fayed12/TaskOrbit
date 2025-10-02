@@ -6,12 +6,7 @@ import { tasksContext } from "../context/tasksContext";
 import { API_BASE_TASKS_URL } from "../config";
 
 function UseTasks() {
-  const {
-    tasks: allTasks,
-    setTasks,
-    checkedIds,
-    setCheckedIds,
-    } = useContext(tasksContext);
+  const { tasks: allTasks,setTasks } = useContext(tasksContext);
 
     // update function
     async function updateData(id,updatingData) {
@@ -33,8 +28,7 @@ function UseTasks() {
         }
     }
 
-
-  return [allTasks, setTasks, checkedIds, setCheckedIds, updateData];
+  return [allTasks, setTasks,updateData];
 }
 
 
