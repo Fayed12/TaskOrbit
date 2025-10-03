@@ -41,7 +41,9 @@ export default function ClearableProp({ newTaskData, setDateValue }) {
             onChange={(newValue) =>
               setDateValue({
                 ...newTaskData,
-                dueDate: newValue ? newValue.toISOString().split("T").at(0) : null,
+                dueDate: newValue
+                  ? newValue.toISOString().split("T").at(0)
+                  : null,
               })
             }
             sx={{ width: 260 }}

@@ -24,7 +24,7 @@
       "id": "1",
       "title": "Finish project plan",
       "description": "Prepare requirements document for TaskOrbit",
-      "completed": false,
+      "completed": true,
       "priority": "high",
       "dueDate": "2025-09-28",
       "userId": "1758859250429"

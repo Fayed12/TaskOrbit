@@ -4,72 +4,78 @@ import { useReducer } from "react";
 // local
 import style from "../../../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis.module.css";
 import UseTasks from "../../../hooks/tasksCustomHook.jsx";
-import MainInput from "../../input.jsx"
+import EditTask from "../edit-task/edit.jsx";
 
 // initialValues
 const initialValues = {
-    editValues: {},
-    editCloseBTN: null,
-    openID: null,
-    checked: false,
-}
+  editValues: {
+    dueDate: "",
+    title: "",
+  },
+  editCloseBTN: null,
+  openID: null,
+  checked: false,
+};
 
 function reducer(state, action) {
-    switch (action.type) {
-      case "editValues":
-        return {
-          ...state,
-          editValues: {
-            ...state.editValues,
-            [action.payload.id]: action.payload.value,
-          },
-        };
-      case "openEdit":
-        return {
-          ...state,
-          editCloseBTN: action.payload,
-          openID: action.payload,
-        };
-      case "closeEdit":
-        return {
-          ...state,
-          editCloseBTN: action.payload,
-          openID: action.payload,
-        };
-      case "checked":
-        return {
-          ...state,
-          checked: action.payload,
-        };
-      default:
-        return;
-    }
+  switch (action.type) {
+    case "editValues":
+      return {
+        ...state,
+        editValues: {
+          title: action.payload.title,
+          dueDate: action.payload.dueDate,
+        },
+      };
+    case "openEdit":
+      return {
+        ...state,
+        editCloseBTN: action.payload,
+        openID: action.payload,
+      };
+    case "closeEdit":
+      return {
+        ...state,
+        editCloseBTN: action.payload,
+        openID: action.payload,
+      };
+    case "checked":
+      return {
+        ...state,
+        checked: action.payload,
+      };
+    default:
+      return;
+  }
 }
 // ==================================================================================================================
 function TasksManagement() {
-    const [allTasks, setTasks] = UseTasks();
-    const [{ editValues, editCloseBTN, openID, checked }, dispatch] =
-      useReducer(reducer, initialValues);
-    console.log(editCloseBTN);
-    // function handle open edit input 
-    function handleOpenEdit(id) {
-        allTasks.map((task) => {
-            if (task.id === id) {
-                dispatch({ type: "openEdit" , payload: id })
-            }
-        })
-    }
+  // eslint-disable-next-line no-unused-vars
+  const [allTasks, setTasks] = UseTasks();
+  const [{ editValues, editCloseBTN, openID, checked }, dispatch] = useReducer(
+    reducer,
+    initialValues
+  );
+  console.log(editCloseBTN);
+  // function handle open edit input
+  function handleOpenEdit(id) {
+    allTasks.map((task) => {
+      if (task.id === id) {
+        dispatch({ type: "openEdit", payload: id });
+      }
+    });
+  }
 
-    // function close edit input
-    function handleCloseEdit(id) {
-        allTasks.map((task) => {
-          if (task.id === id) {
-            dispatch({ type: "closeEdit", payload: null });
-          }
-        });
-    }
+  // function close edit input
+  function handleCloseEdit(id) {
+    allTasks.map((task) => {
+      if (task.id === id) {
+        dispatch({ type: "closeEdit", payload: null });
+      }
+    });
+  }
 
-    // tasks list 
+  // tasks list
   const tasksLIst = allTasks.map((task) => (
     <li key={task.id}>
       <div className={style.TaskContent}>
@@ -90,25 +96,18 @@ function TasksManagement() {
           </div>
         ) : (
           <div className={style.taskEdit}>
-            <MainInput
-              key={task.id}
-              inpType="text"
-              inpPlaceholder="Edit Title...."
-              inpValue={editValues[task.id] || ""}
-              inpSetValue={(e) =>
-                dispatch({
-                  type: "editValues",
-                  payload: { value: e.target.value, id: task.id },
-                })
+              <EditTask
+                taskId = {task.id}
+              newTask={editValues}
+              setNewTask={(updatedValues) =>
+                dispatch({ type: "editValues", payload: updatedValues })
               }
+              closePopup={()=>handleCloseEdit(task.id)}
             />
-            <button type="button">Save</button>
           </div>
         )}
 
         <div className={style.buttons}>
-          <div>
-            {editCloseBTN !== task.id ? (
               <button
                 type="button"
                 title="edit"
@@ -117,22 +116,9 @@ function TasksManagement() {
               >
                 Edit
               </button>
-            ) : (
-              <button
-                type="button"
-                title="close"
-                onClick={() => handleCloseEdit(task.id)}
-                className={style.edit}
-              >
-                close
-              </button>
-            )}
-          </div>
-          {editCloseBTN !== task.id && (
             <button type="button" title="delete" className={style.delete}>
               Delete
             </button>
-          )}
         </div>
       </div>
     </li>
