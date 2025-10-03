@@ -42,7 +42,7 @@
       "id": "3",
       "title": "Write weekly report",
       "description": "Summarize weekly achievements",
-      "completed": false,
+      "completed": true,
       "priority": "medium",
       "dueDate": "2025-10-01",
       "userId": "1758859250429"

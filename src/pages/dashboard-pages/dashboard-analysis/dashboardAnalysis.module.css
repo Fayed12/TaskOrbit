@@ -1,0 +1,38 @@
+:root{
+  --main-background-color:#fcf1e4;
+  --main-hover-color:#f3e7d9;
+  --brown-color:#a67443;
+  --dark-brown-color:#865d37;
+  --light-brown-color:#b78854;
+  --hover-brown-color:#eddac3;
+  --text-color:#93673e;
+}
+
+.analysis{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    background-color: var(--hover-brown-color);
+}
+
+.analysis .taskManagement{
+    margin-bottom: 20px;
+}
+
+.analysis .TasksAnalysis ,
+.analysis .taskManagement{
+    background-color: var(--main-background-color);
+    padding: 10px;
+    border: 1px solid var(--brown-color);
+    border-radius: 10px;
+}
+
+/* tasks management content */
+.analysis .taskManagement .TasksManagementContent{
+
+}
+
+/* tasks analysis content */
+.analysis .TasksAnalysis .TasksAnalysisContent{
+
+}
