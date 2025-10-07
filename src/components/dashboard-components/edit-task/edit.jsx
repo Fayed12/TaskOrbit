@@ -39,8 +39,8 @@ function EditTask({ taskId, newTask, setNewTask, closePopup }) {
   }
 
   // handle save function
-  function handleSaveNewData() {
-    if (!handleFieldsAreFilledIn()) return;
+  async function handleSaveNewData() {
+    if ( await( !handleFieldsAreFilledIn())) return;
     toast.loading("loading...", { id: "newTask-toast" });
     setTimeout(() => {
       if (!handleSaveDataInJSONFile()) return;
@@ -54,6 +54,7 @@ function EditTask({ taskId, newTask, setNewTask, closePopup }) {
       closePopup()
     }, 2000);
   }
+
   return (
     <>
       <div className={style.editTask}>

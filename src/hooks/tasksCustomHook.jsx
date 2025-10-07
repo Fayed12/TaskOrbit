@@ -18,18 +18,34 @@ function UseTasks() {
             body: JSON.stringify(updatingData),
           });
           if (!res.ok) throw new Error("Update failed");
-
           const updatedTask = await res.json();
           setTasks((prev) =>
             prev.map((task) => (task.id === id ? updatedTask : task))
           );
-          return updatedTask;
+          // return updatedTask;
         } catch (err) {
           console.error(err);
         }
     }
 
-  return [allTasks, setTasks,updateData];
+  // delete task from JSON
+  async function deleteTask(id) {
+    try {
+      const res = await fetch(`${API_BASE_TASKS_URL}/${id}`, {
+        method: "DELETE",
+      });
+      if (!res.ok) {
+        throw new Error("something error in fetching Data")
+      }
+      setTasks((prev) => prev.filter((task) => {
+        return task.id !== id
+      }));
+    } catch (err) {
+          console.error(err);
+    }
+  }
+  
+  return [allTasks, setTasks, updateData, deleteTask];
 }
 
 

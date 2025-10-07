@@ -35,6 +35,10 @@ npm install @mui/icons-material
 ```bash
 npm install react-hot-toast
 ```
+#### install the sweetalert2 library
+```bash
+npm install sweetalert2
+```
 #### install tailwind
 ```bash
 npm install tailwindcss @tailwindcss/vite

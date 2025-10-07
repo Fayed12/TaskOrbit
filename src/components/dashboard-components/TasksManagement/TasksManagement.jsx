@@ -1,6 +1,9 @@
 // react
 import { useReducer } from "react";
 
+// sweet alert
+import Swal from "sweetalert2";
+
 // local
 import style from "../../../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis.module.css";
 import UseTasks from "../../../hooks/tasksCustomHook.jsx";
@@ -50,7 +53,7 @@ function reducer(state, action) {
 }
 // ==================================================================================================================
 function TasksManagement() {
-  const [allTasks] = UseTasks();
+  const [allTasks, , , deleteTask] = UseTasks();
   const [{ editValues, openID, checked }, dispatch] = useReducer(
     reducer,
     initialValues
@@ -73,6 +76,48 @@ function TasksManagement() {
       }
     });
   }
+
+  // handle delete task with sweet alert
+  function handleDeleteTask(id) {
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger",
+        },
+        buttonsStyling: true,
+      });
+      swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure to delete this Task?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, delete it!",
+          cancelButtonText: "No, cancel!",
+          reverseButtons: true,
+        })
+        .then(async (result) => {
+          if (result.isConfirmed) {
+            try {
+              await deleteTask(id);
+              swalWithBootstrapButtons.fire({
+                title: "Deleted!",
+                text: "Your Task has been deleted.",
+                icon: "success",
+              });
+            } catch (err) {
+              console.log(err.message)
+              Swal.fire("Error", "Failed to delete the task!", "error");
+            }
+          } else if (result.dismiss === Swal.DismissReason.cancel) {
+            swalWithBootstrapButtons.fire({
+              title: "Cancelled",
+              text: "Your task is safe :)",
+              icon: "error",
+            });
+          }
+        });
+    }
 
   // tasks list
   const tasksLIst = allTasks.map((task) => (
@@ -101,7 +146,12 @@ function TasksManagement() {
           >
             Edit
           </button>
-          <button type="button" title="delete" className={style.delete}>
+          <button
+            type="button"
+            title="delete"
+            className={style.delete}
+            onClick={() => handleDeleteTask(task.id)}
+          >
             Delete
           </button>
         </div>

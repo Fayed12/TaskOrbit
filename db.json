@@ -21,15 +21,6 @@
   ],
   "tasks": [
     {
-      "id": "1",
-      "title": "hello3",
-      "description": "Prepare requirements document for TaskOrbit",
-      "completed": true,
-      "priority": "high",
-      "dueDate": "2025-10-08",
-      "userId": "1758859250429"
-    },
-    {
       "id": "2",
       "title": "Read new React docs",
       "description": "Check out the latest updates in React 19",
@@ -154,24 +145,6 @@
       "priority": "high",
       "dueDate": "2025-10-05",
       "userId": "2758859253427"
-    },
-    {
-      "id": "1759384842235",
-      "title": "one",
-      "description": "",
-      "completed": false,
-      "priority": "high",
-      "dueDate": "2025-10-28",
-      "userId": "1758859250429"
-    },
-    {
-      "id": "1759475654230",
-      "title": "add new one",
-      "description": "",
-      "completed": false,
-      "priority": "medium",
-      "dueDate": "2025-10-03",
-      "userId": "1758859250429"
     }
   ]
 }

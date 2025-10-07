@@ -8,7 +8,7 @@
   font-display: swap;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -18,55 +18,55 @@
   color: var(--text-color);
 }
 
-:root{
-  --main-background-color:#fcf1e4;
-  --main-hover-color:#f3e7d9;
-  --brown-color:#a67443;
-  --dark-brown-color:#865d37;
-  --light-brown-color:#b78854;
-  --hover-brown-color:#eddac3;
-  --text-color:#93673e;
+:root {
+  --main-background-color: #fcf1e4;
+  --main-hover-color: #f3e7d9;
+  --brown-color: #a67443;
+  --dark-brown-color: #865d37;
+  --light-brown-color: #b78854;
+  --hover-brown-color: #eddac3;
+  --text-color: #93673e;
 }
 
-.pages{
+.pages {
   background-color: var(--hover-brown-color);
   width: 100%;
   height: calc(100dvh - 80px);
 }
 
-ul{
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-ul li .active{
-    color: var(--brown-color);
+ul li .active {
+  color: var(--brown-color);
 }
 
-ul li .active span{
-    color: var(--brown-color);
+ul li .active span {
+  color: var(--brown-color);
 }
 
-ul li .active path{
-    color: var(--brown-color);
+ul li .active path {
+  color: var(--brown-color);
 }
 
-::-webkit-scrollbar{
-    width: 7px;
+::-webkit-scrollbar {
+  width: 7px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background-color: var(--hover-brown-color);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: var(--dark-brown-color);
   border-radius: 10px;
 }
 
-input ,
-textarea{
+input,
+textarea {
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -81,7 +81,7 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(138, 90, 59, 0.15);
 }
 
-.nav{
+.nav {
   position: sticky;
   top: 0;
   right: 0;
@@ -95,27 +95,27 @@ textarea:focus {
 
 /*start task table */
 
-.hide-container{
+.hide-container {
   margin-top: 10px;
   padding: 10px;
 }
 
-.hidden-tasks .title{
+.hidden-tasks .title {
   font-size: 20px;
   font-weight: 600;
   margin-right: 10px;
   text-wrap: nowrap;
 }
 
-.MuiChip-label{
+.MuiChip-label {
   color: white !important;
 }
 
-.MuiButtonBase-root{
+.MuiButtonBase-root {
   cursor: pointer !important;
 }
 
-.MuiDataGrid-scrollbarContent{
+.MuiDataGrid-scrollbarContent {
   height: 4px !important;
 }
 
@@ -123,3 +123,65 @@ textarea:focus {
   height: 4px !important;
 }
 /*end task table */
+
+/* start SweetAlert2 */
+
+.swal2-popup {
+  width: 90% !important;
+  max-width: 400px !important;
+  font-size: 0.9rem !important;
+  border-radius: 12px !important;
+}
+
+.swal2-title {
+  font-size: 1.1rem !important;
+  line-height: 1.5 !important;
+  color: var(--text-color) !important;
+}
+
+.swal2-html-container {
+  font-size: 0.8rem !important;
+  color: var(--brown-color) !important;
+}
+
+.swal2-actions .btn {
+  min-width: 100px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+@media (max-width: 786px) {
+  .swal2-popup {
+    width: 80% !important;
+  }
+
+  .swal2-title {
+    font-size: 1rem !important;
+  }
+
+  .swal2-html-container {
+    font-size: 0.7rem !important;
+  }
+
+  .swal2-actions {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+
+  .swal2-actions .btn {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .swal2-icon {
+    width: 4em !important;
+    height: 4em !important;
+  }
+
+  .swal2-icon-content {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* end SweetAlert2 */
