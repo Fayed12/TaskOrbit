@@ -10,7 +10,6 @@ import { useLocation, NavLink } from 'react-router';
 export default function BasicBreadcrumbs() {
   const location = useLocation()
   let pathnameLink = location.pathname.split("/");
-  console.log()
 
   return (
     <div role="presentation">
