@@ -58,7 +58,7 @@ export default function ClearableProp({ newTaskData, setDateValue }) {
             sx={{ position: "absolute", bottom: 0, right: 0 }}
             severity="success"
           >
-            Field cleared!
+            cleared!
           </Alert>
         )}
       </Box>

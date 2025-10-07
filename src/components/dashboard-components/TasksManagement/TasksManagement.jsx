@@ -9,8 +9,8 @@ import EditTask from "../edit-task/edit.jsx";
 // initialValues
 const initialValues = {
   editValues: {
-    dueDate: "",
     title: "",
+    dueDate: "",
   },
   editCloseBTN: null,
   openID: null,
@@ -50,13 +50,12 @@ function reducer(state, action) {
 }
 // ==================================================================================================================
 function TasksManagement() {
-  // eslint-disable-next-line no-unused-vars
-  const [allTasks, setTasks] = UseTasks();
-  const [{ editValues, editCloseBTN, openID, checked }, dispatch] = useReducer(
+  const [allTasks] = UseTasks();
+  const [{ editValues, openID, checked }, dispatch] = useReducer(
     reducer,
     initialValues
   );
-  console.log(editCloseBTN);
+
   // function handle open edit input
   function handleOpenEdit(id) {
     allTasks.map((task) => {
@@ -79,47 +78,45 @@ function TasksManagement() {
   const tasksLIst = allTasks.map((task) => (
     <li key={task.id}>
       <div className={style.TaskContent}>
-        {openID !== task.id ? (
-          <div className={style.taskDetails}>
-            <input
-              type="checkbox"
-              name="checked"
-              checked={checked}
-              onChange={(e) =>
-                dispatch({ type: "checked", payload: e.target.checked })
-              }
-            />
-            <div className={style.taskContent}>
-              <h2>{task.title}</h2>
-              <p>{task.dueDate}</p>
-            </div>
+        <div className={style.taskDetails}>
+          <input
+            type="checkbox"
+            name="checked"
+            checked={checked}
+            onChange={(e) =>
+              dispatch({ type: "checked", payload: e.target.checked })
+            }
+          />
+          <div className={style.taskContent}>
+            <h2>{task.title}</h2>
+            <p>{task.dueDate}</p>
           </div>
-        ) : (
+        </div>
+        <div className={style.buttons}>
+          <button
+            type="button"
+            title="edit"
+            onClick={() => handleOpenEdit(task.id)}
+            className={style.edit}
+          >
+            Edit
+          </button>
+          <button type="button" title="delete" className={style.delete}>
+            Delete
+          </button>
+        </div>
+        {openID === task.id && (
           <div className={style.taskEdit}>
-              <EditTask
-                taskId = {task.id}
+            <EditTask
+              taskId={task.id}
               newTask={editValues}
               setNewTask={(updatedValues) =>
                 dispatch({ type: "editValues", payload: updatedValues })
               }
-              closePopup={()=>handleCloseEdit(task.id)}
+              closePopup={() => handleCloseEdit(task.id)}
             />
           </div>
         )}
-
-        <div className={style.buttons}>
-              <button
-                type="button"
-                title="edit"
-                onClick={() => handleOpenEdit(task.id)}
-                className={style.edit}
-              >
-                Edit
-              </button>
-            <button type="button" title="delete" className={style.delete}>
-              Delete
-            </button>
-        </div>
       </div>
     </li>
   ));
