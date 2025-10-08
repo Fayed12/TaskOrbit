@@ -33,7 +33,7 @@
       "id": "3",
       "title": "Write weekly report day",
       "description": "Summarize weekly achievements",
-      "completed": true,
+      "completed": false,
       "priority": "medium",
       "dueDate": "2025-10-08",
       "userId": "1758859250429"
@@ -42,7 +42,7 @@
       "id": "4",
       "title": "Update GitHub repo",
       "description": "Push latest commits",
-      "completed": true,
+      "completed": false,
       "priority": "low",
       "dueDate": "2025-09-27",
       "userId": "1758859250429"
@@ -51,7 +51,7 @@
       "id": "5",
       "title": "Team meeting",
       "description": "Discuss next sprint backlog",
-      "completed": true,
+      "completed": false,
       "priority": "high",
       "dueDate": "2025-09-30",
       "userId": "1758859250429"

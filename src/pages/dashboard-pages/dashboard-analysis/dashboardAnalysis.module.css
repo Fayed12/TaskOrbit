@@ -121,6 +121,15 @@
     color: var(--main-background-color);
 }
 
+.taskDone {
+    text-decoration: line-through;
+    color: #d7b58e !important;
+}
+
+.hidden{
+    display: none;
+}
+
 /* tasks analysis content */
 .analysis .TasksAnalysis .TasksAnalysisContent{
 

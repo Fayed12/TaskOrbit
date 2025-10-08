@@ -1,5 +1,5 @@
 // react
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
 // sweet alert
 import Swal from "sweetalert2";
@@ -17,7 +17,7 @@ const initialValues = {
   },
   editCloseBTN: null,
   openID: null,
-  checked: false,
+  checked: JSON.parse(localStorage.getItem("checkedTasks")) || {},
 };
 
 function reducer(state, action) {
@@ -43,9 +43,15 @@ function reducer(state, action) {
         openID: action.payload,
       };
     case "checked":
+      if (action.payload.id === null) {
+        return { ...state, checked: action.payload.value };
+      }
       return {
         ...state,
-        checked: action.payload,
+        checked: {
+          ...state.checked,
+          [action.payload.id]: action.payload.value,
+        },
       };
     default:
       return;
@@ -53,11 +59,56 @@ function reducer(state, action) {
 }
 // ==================================================================================================================
 function TasksManagement() {
-  const [allTasks, , , deleteTask] = UseTasks();
+  const [allTasks, , updateData, deleteTask] = UseTasks();
   const [{ editValues, openID, checked }, dispatch] = useReducer(
     reducer,
     initialValues
   );
+
+  // handle is task done or not
+  function handleCheckedTask(task, value) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: true,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure you complete this task?",
+        text: "You can update the task using the Achievement Replacer tool on the home page!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
+        reverseButtons: true,
+      })
+      .then(async (result) => {
+        if (result.isConfirmed) {
+          try {
+            await updateData(task.id, {
+              completed: !task.completed,
+            });
+            dispatch({ type: "checked", payload: { id: task.id, value } });
+            swalWithBootstrapButtons.fire({
+              title: "done!",
+              text: "Your Task has been done successful.",
+              icon: "success",
+            });
+          } catch (err) {
+            console.log(err.message);
+            Swal.fire("Error", "Failed to make this task checked!", "error");
+          }
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "action closed :)",
+            icon: "error",
+          });
+        }
+      });
+  }
 
   // function handle open edit input
   function handleOpenEdit(id) {
@@ -79,62 +130,78 @@ function TasksManagement() {
 
   // handle delete task with sweet alert
   function handleDeleteTask(id) {
-      const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-          confirmButton: "btn btn-success",
-          cancelButton: "btn btn-danger",
-        },
-        buttonsStyling: true,
-      });
-      swalWithBootstrapButtons
-        .fire({
-          title: "Are you sure to delete this Task?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonText: "Yes, delete it!",
-          cancelButtonText: "No, cancel!",
-          reverseButtons: true,
-        })
-        .then(async (result) => {
-          if (result.isConfirmed) {
-            try {
-              await deleteTask(id);
-              swalWithBootstrapButtons.fire({
-                title: "Deleted!",
-                text: "Your Task has been deleted.",
-                icon: "success",
-              });
-            } catch (err) {
-              console.log(err.message)
-              Swal.fire("Error", "Failed to delete the task!", "error");
-            }
-          } else if (result.dismiss === Swal.DismissReason.cancel) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: true,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure to delete this Task?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then(async (result) => {
+        if (result.isConfirmed) {
+          try {
+            await deleteTask(id);
             swalWithBootstrapButtons.fire({
-              title: "Cancelled",
-              text: "Your task is safe :)",
-              icon: "error",
+              title: "Deleted!",
+              text: "Your Task has been deleted.",
+              icon: "success",
             });
+          } catch (err) {
+            console.log(err.message);
+            Swal.fire("Error", "Failed to delete the task!", "error");
           }
-        });
-    }
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your task is safe :)",
+            icon: "error",
+          });
+        }
+      });
+  }
+
+  // save checked to localstorage
+  useEffect(() => {
+    localStorage.setItem("checkedTasks", JSON.stringify(checked));
+  }, [checked]);
+
+  // make tasks checked by task completed value
+  useEffect(() => {
+    const newChecked = {};
+    allTasks.forEach((task) => {
+      newChecked[task.id] = task.completed;
+    });
+    dispatch({ type: "checked", payload: { id: null, value: newChecked } });
+  }, [allTasks]);
 
   // tasks list
   const tasksLIst = allTasks.map((task) => (
     <li key={task.id}>
       <div className={style.TaskContent}>
         <div className={style.taskDetails}>
-          <input
-            type="checkbox"
-            name="checked"
-            checked={checked}
-            onChange={(e) =>
-              dispatch({ type: "checked", payload: e.target.checked })
-            }
-          />
+          {!checked[task.id] && (
+            <input
+              type="checkbox"
+              name="checked"
+              checked={checked[task.id] || false}
+              onChange={(e) => handleCheckedTask(task, e.target.checked)}
+            />
+          )}
           <div className={style.taskContent}>
-            <h2>{task.title}</h2>
-            <p>{task.dueDate}</p>
+            <h2 className={checked[task.id] && [style.taskDone]}>
+              {task.title}
+            </h2>
+            <p className={checked[task.id] && [style.hidden]}>{task.dueDate}</p>
           </div>
         </div>
         <div className={style.buttons}>
@@ -142,7 +209,7 @@ function TasksManagement() {
             type="button"
             title="edit"
             onClick={() => handleOpenEdit(task.id)}
-            className={style.edit}
+            className={`${style.edit} ${checked[task.id] && [style.hidden]}`}
           >
             Edit
           </button>
