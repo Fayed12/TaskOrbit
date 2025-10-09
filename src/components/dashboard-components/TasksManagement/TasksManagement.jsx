@@ -1,5 +1,5 @@
 // react
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 
 // sweet alert
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import style from "../../../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis.module.css";
 import UseTasks from "../../../hooks/tasksCustomHook.jsx";
 import EditTask from "../edit-task/edit.jsx";
+import toast from "react-hot-toast";
 
 // initialValues
 const initialValues = {
@@ -59,6 +60,7 @@ function reducer(state, action) {
 }
 // ==================================================================================================================
 function TasksManagement() {
+    const hasRun = useRef(false);
   const [allTasks, , updateData, deleteTask] = UseTasks();
   const [{ editValues, openID, checked }, dispatch] = useReducer(
     reducer,
@@ -184,6 +186,34 @@ function TasksManagement() {
     dispatch({ type: "checked", payload: { id: null, value: newChecked } });
   }, [allTasks]);
 
+  // get the current date after reload the website
+  useEffect(() => {
+    if (hasRun.current || !allTasks.length) return;
+    hasRun.current = true;
+
+    const today = new Date();
+    const lateTasks = allTasks.filter((task) => {
+      const taskDate = new Date(task.dueDate);
+      return taskDate < today;
+    });
+    if (lateTasks.length === 0) return;
+    lateTasks.forEach((task) => {
+      dispatch({ type: "checked", payload: { id: task.id, value: true } });
+    });
+    // use promise.all to make function update every task alone, not all together
+    Promise.all(
+      lateTasks.map((task) => updateData(task.id, { completed: true }))
+    );
+
+    // main message
+    setTimeout(() => {
+      toast.error(
+        `There are ${lateTasks.length} tasks that have been completed, please remove them .`,
+        { id: "taskManagement" }
+      );
+    }, 1000);
+  }, [allTasks, updateData])
+
   // tasks list
   const tasksLIst = allTasks.map((task) => (
     <li key={task.id}>
@@ -198,10 +228,10 @@ function TasksManagement() {
             />
           )}
           <div className={style.taskContent}>
-            <h2 className={checked[task.id] && [style.taskDone]}>
+            <h2 className={checked[task.id] ? [style.taskDone] : undefined}>
               {task.title}
             </h2>
-            <p className={checked[task.id] && [style.hidden]}>{task.dueDate}</p>
+            <p className={checked[task.id] ?[style.hidden] : undefined}>{task.dueDate}</p>
           </div>
         </div>
         <div className={style.buttons}>
@@ -209,7 +239,7 @@ function TasksManagement() {
             type="button"
             title="edit"
             onClick={() => handleOpenEdit(task.id)}
-            className={`${style.edit} ${checked[task.id] && [style.hidden]}`}
+            className={`${style.edit} ${checked[task.id] ? [style.hidden]  : undefined}`}
           >
             Edit
           </button>
