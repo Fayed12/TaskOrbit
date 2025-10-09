@@ -24,7 +24,7 @@
       "id": "2",
       "title": "Read new React docs",
       "description": "Check out the latest updates in React 19",
-      "completed": false,
+      "completed": true,
       "priority": "medium",
       "dueDate": "2025-11-20",
       "userId": "1758859250429"
@@ -33,7 +33,7 @@
       "id": "4",
       "title": "Update GitHub repo",
       "description": "Push latest commits",
-      "completed": false,
+      "completed": true,
       "priority": "low",
       "dueDate": "2025-12-14",
       "userId": "1758859250429"
@@ -51,7 +51,7 @@
       "id": "6",
       "title": "Buy groceries",
       "description": "Milk, Bread, Eggs, Fruits",
-      "completed": false,
+      "completed": true,
       "priority": "low",
       "dueDate": "2025-11-25",
       "userId": "1758819252439"
@@ -87,7 +87,7 @@
       "id": "10",
       "title": "Car maintenance",
       "description": "Oil change and tire rotation",
-      "completed": false,
+      "completed": true,
       "priority": "low",
       "dueDate": "2025-11-29",
       "userId": "1758819252439"
@@ -105,7 +105,7 @@
       "id": "12",
       "title": "Plan weekend trip",
       "description": "Choose destination and book hotel",
-      "completed": false,
+      "completed": true,
       "priority": "medium",
       "dueDate": "2025-12-04",
       "userId": "2758859253427"
@@ -123,7 +123,7 @@
       "id": "14",
       "title": "Grocery shopping",
       "description": "Vegetables and chicken",
-      "completed": false,
+      "completed": true,
       "priority": "medium",
       "dueDate": "2025-12-01",
       "userId": "2758859253427"

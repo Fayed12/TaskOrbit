@@ -1,16 +1,16 @@
 // local
 import style from "../../../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis.module.css"
-
+import GeneralStatistics from "../General-statistics/generalStatistics";
 
 // ==================================================================================================================
 function TasksAnalysis() {
     return ( 
         <>
             <div className={style.TasksAnalysisContent}>
-                <h1>hello in TasksAnalysis</h1>
+                <GeneralStatistics/>
         </div>
         </>
-     );
+    );
 }
 
 export default TasksAnalysis;
