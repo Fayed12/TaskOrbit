@@ -4,6 +4,9 @@ import ClearableProp from "../../dateAddTask";
 // react
 import { useState, useEffect } from "react";
 
+// sweet alert
+import Swal from "sweetalert2";
+
 // toast
 import toast from "react-hot-toast";
 
@@ -25,7 +28,7 @@ const initialTaskData = {
 
 // ==================================================================================================================
 function AddTasks({ openAddTask }) {
-  const[openCancel , setOpenCancel] = useState(false)
+  const [openCancel, setOpenCancel] = useState(false);
   const [, setTasks] = UseTasks();
   const [newTaskData, setNewTaskData] = useState(initialTaskData);
 
@@ -75,31 +78,58 @@ function AddTasks({ openAddTask }) {
 
   // handle cancel add task
   function handleCancelButton() {
-    const confirmCancel = confirm("are you shure you want cancel this task?");
-    if (!confirmCancel) {
-      return;
-    }
-    setNewTaskData(initialTaskData);
-    toast.success("Cancel add this task", { id: "addTask-toast" });
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: true,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: "are you sure you want cancel this task?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes",
+        cancelButtonText: "No!",
+        reverseButtons: true,
+      })
+      .then(async (result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire({
+            title: "Canceled!",
+            text: "Cancel add this task",
+            icon: "success",
+          });
+          setNewTaskData(initialTaskData);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire({
+            title: "keep working",
+            text: "add new task :)",
+            icon: "error",
+          });
+          return;
+        }
+      });
   }
 
-    useEffect(() => {
-      if (
-        newTaskData.title ||
-        newTaskData.priority ||
-        newTaskData.description ||
-        newTaskData.dueDate
-      ) {
-        setOpenCancel(true);
-      } else {
-        setOpenCancel(false);
-      }
-    }, [
-      newTaskData.description,
-      newTaskData.dueDate,
-      newTaskData.priority,
-      newTaskData.title,
-    ]);
+  useEffect(() => {
+    if (
+      newTaskData.title ||
+      newTaskData.priority ||
+      newTaskData.description ||
+      newTaskData.dueDate
+    ) {
+      setOpenCancel(true);
+    } else {
+      setOpenCancel(false);
+    }
+  }, [
+    newTaskData.description,
+    newTaskData.dueDate,
+    newTaskData.priority,
+    newTaskData.title,
+  ]);
 
   useEffect(() => {
     const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));

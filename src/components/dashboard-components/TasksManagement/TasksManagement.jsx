@@ -4,11 +4,13 @@ import { useEffect, useReducer, useRef } from "react";
 // sweet alert
 import Swal from "sweetalert2";
 
+// toast
+import toast from "react-hot-toast";
+
 // local
 import style from "../../../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis.module.css";
 import UseTasks from "../../../hooks/tasksCustomHook.jsx";
 import EditTask from "../edit-task/edit.jsx";
-import toast from "react-hot-toast";
 
 // initialValues
 const initialValues = {

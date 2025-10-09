@@ -15,6 +15,9 @@ import { useState, useEffect } from "react";
 // toast
 import toast from "react-hot-toast";
 
+// sweet alert 
+import Swal from "sweetalert2";
+
 // react router
 import { useNavigate } from "react-router";
 
@@ -50,24 +53,51 @@ export default function UserInfo() {
     if (!isLoggedIn) {
       return;
     }
-    const confirmQ = window.confirm("Are you sure you want to log out?");
-    if (!confirmQ) {
-      toast.error("The logout process has been stopped!", {
-        id: "logout-toast",
-      });
-      handleCloseMenu();
-    } else {
-      toast.loading("loading....", { id: "logout-toast" });
-      handleCloseMenu();
-      setTimeout(() => {
-        toast.success("logout successful", { id: "logout-toast" });
-      }, 2000);
-      setTimeout(() => {
-        sessionStorage.setItem("isLoggedIn", "false");
-        navigate("/home", { replace: true });
-      }, 3000);
-    }
-    
+    const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger",
+          },
+          buttonsStyling: true,
+        });
+        swalWithBootstrapButtons
+          .fire({
+            title: "are you sure you want to logout?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            cancelButtonText: "No!",
+            reverseButtons: true,
+          })
+          .then(async (result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire({
+                title: "Canceled!",
+                text: "Cancel add this task",
+                icon: "success",
+              });
+              // local code
+              toast.loading("loading....", { id: "logout-toast" });
+              handleCloseMenu();
+              setTimeout(() => {
+                toast.success("logout successful", { id: "logout-toast" });
+              }, 2000);
+              setTimeout(() => {
+                sessionStorage.setItem("isLoggedIn", "false");
+                navigate("/home", { replace: true });
+              }, 3000);
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+              swalWithBootstrapButtons.fire({
+                title: "keep working",
+                text: "add new task :)",
+                icon: "error",
+              });
+              toast.error("The logout process has been stopped!", {
+                id: "logout-toast",
+              });
+              handleCloseMenu();
+            }
+          });
   }
 
   return (

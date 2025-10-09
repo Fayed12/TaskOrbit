@@ -24,27 +24,27 @@
       "id": "2",
       "title": "Read new React docs",
       "description": "Check out the latest updates in React 19",
-      "completed": true,
+      "completed": false,
       "priority": "medium",
-      "dueDate": "2025-09-20",
+      "dueDate": "2025-11-20",
       "userId": "1758859250429"
     },
     {
       "id": "4",
-      "title": " Update GitHub repo",
+      "title": "Update GitHub repo",
       "description": "Push latest commits",
       "completed": false,
       "priority": "low",
-      "dueDate": "2025-10-14",
+      "dueDate": "2025-12-14",
       "userId": "1758859250429"
     },
     {
       "id": "5",
       "title": "Team meeting",
       "description": "Discuss next sprint backlog",
-      "completed": true,
+      "completed": false,
       "priority": "high",
-      "dueDate": "2025-09-30",
+      "dueDate": "2025-11-30",
       "userId": "1758859250429"
     },
     {
@@ -53,7 +53,7 @@
       "description": "Milk, Bread, Eggs, Fruits",
       "completed": false,
       "priority": "low",
-      "dueDate": "2025-09-25",
+      "dueDate": "2025-11-25",
       "userId": "1758819252439"
     },
     {
@@ -62,7 +62,7 @@
       "description": "Leg day exercises",
       "completed": false,
       "priority": "medium",
-      "dueDate": "2025-09-24",
+      "dueDate": "2025-11-24",
       "userId": "1758819252439"
     },
     {
@@ -71,7 +71,7 @@
       "description": "Complete the last 3 chapters",
       "completed": false,
       "priority": "medium",
-      "dueDate": "2025-10-02",
+      "dueDate": "2025-12-02",
       "userId": "1758819252439"
     },
     {
@@ -80,7 +80,7 @@
       "description": "Slides for Monday meeting",
       "completed": false,
       "priority": "high",
-      "dueDate": "2025-10-03",
+      "dueDate": "2025-12-03",
       "userId": "1758819252439"
     },
     {
@@ -89,7 +89,7 @@
       "description": "Oil change and tire rotation",
       "completed": false,
       "priority": "low",
-      "dueDate": "2025-09-29",
+      "dueDate": "2025-11-29",
       "userId": "1758819252439"
     },
     {
@@ -98,7 +98,7 @@
       "description": "Schedule appointment for next week",
       "completed": false,
       "priority": "high",
-      "dueDate": "2025-09-30",
+      "dueDate": "2025-11-30",
       "userId": "2758859253427"
     },
     {
@@ -107,7 +107,7 @@
       "description": "Choose destination and book hotel",
       "completed": false,
       "priority": "medium",
-      "dueDate": "2025-10-04",
+      "dueDate": "2025-12-04",
       "userId": "2758859253427"
     },
     {
@@ -116,7 +116,7 @@
       "description": "For a friend’s birthday party",
       "completed": false,
       "priority": "low",
-      "dueDate": "2025-09-28",
+      "dueDate": "2025-11-28",
       "userId": "2758859253427"
     },
     {
@@ -125,7 +125,7 @@
       "description": "Vegetables and chicken",
       "completed": false,
       "priority": "medium",
-      "dueDate": "2025-10-01",
+      "dueDate": "2025-12-01",
       "userId": "2758859253427"
     },
     {
@@ -134,7 +134,7 @@
       "description": "Annual health checkup",
       "completed": false,
       "priority": "high",
-      "dueDate": "2025-10-05",
+      "dueDate": "2025-12-05",
       "userId": "2758859253427"
     }
   ]
