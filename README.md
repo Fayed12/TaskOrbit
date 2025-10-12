@@ -35,9 +35,13 @@ npm install @mui/icons-material
 ```bash
 npm install react-hot-toast
 ```
-#### install the sweetalert2 library
+#### install the sweet alert2 library
 ```bash
 npm install sweetalert2
+```
+#### install recharts library
+```bash
+ npm install recharts
 ```
 #### install tailwind
 ```bash

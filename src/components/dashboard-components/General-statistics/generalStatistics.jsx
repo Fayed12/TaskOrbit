@@ -5,6 +5,8 @@ import { useEffect, useState, useRef } from "react";
 import style from "./generalStatistics.module.css"
 import { API_BASE_TASKS_URL } from "../../../config";
 import UseTasks from "../../../hooks/tasksCustomHook";
+import TasksCompletionChart from "./pieChartCompleted";
+import TasksPriorityChart from "./TasksPriorityChart";
 
 function GeneralStatistics() {
   const [allTasks] = UseTasks();
@@ -114,6 +116,17 @@ function GeneralStatistics() {
             <span>Number of tasks not yet completed by date and time</span>
             <span>{notEndDateTasks}</span>
           </div>
+        </div>
+        <div className={style.charts}>
+          <TasksCompletionChart
+            completed={completedTasks.length}
+            notCompleted={notCompletedTasks.length}
+          />
+          <TasksPriorityChart
+            high={highPriorityTasks.length}
+            medium={mediumPriorityTasks.length}
+            low={lowPriorityTasks.length}
+          />
         </div>
       </div>
     </>
