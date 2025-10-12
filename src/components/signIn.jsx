@@ -44,19 +44,20 @@ function SignIn({ setOpenLoading }) {
           id: "signIn-toast",
         });
       }else if (!foundUser) {
-        toast.error("wrong email or password!!", { id: "signIn-toast" });
+        toast.error("wrong email or password, please try again!!", { id: "signIn-toast" });
       } else {
         toast.success("login successful!", { id: "signIn-toast" });
-        // setUserFormData(initialUser);
         setTimeout(() => {
           setOpenLoading(true);
           sessionStorage.setItem("isLoggedIn", true)
           sessionStorage.setItem("RegisteredUser" , JSON.stringify(foundUser));
         }, 1000);
         setTimeout(() => {
-          setOpenLoading(false);
           navigate("/dashboard" , {replace:true});
         }, 3000);
+        setTimeout(() => {
+          setOpenLoading(false);
+        }, 4000);
       }
     } catch (err) {
       toast.error(err.message, { id: "signIn-toast" });
