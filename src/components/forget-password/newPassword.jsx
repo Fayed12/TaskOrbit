@@ -57,7 +57,7 @@ function ManagePassword({ userId }) {
   async function passwordValidation() {
     if (!checkFields()) return;
     try {
-      const res = await fetch(`${API_BASE_USER_URL}/?id=${Number(userId)}`);
+      const res = await fetch(`${API_BASE_USER_URL}/?id=${userId}`);
       if (!res.ok) {
         throw new Error("something error in fetching data");
       }

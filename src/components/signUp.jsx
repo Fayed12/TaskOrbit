@@ -110,7 +110,7 @@ function SignUp() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...newUser, id: Date.now() }),
+        body: JSON.stringify({ ...newUser, id: String(Date.now()) }),
       });
       if (!res.ok) {
         throw new Error("Failed to register user");
