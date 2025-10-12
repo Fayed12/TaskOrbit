@@ -12,12 +12,14 @@ import ProtectedRoute from "./protectedRoute";
 import DashboardHome from "../pages/dashboard-pages/dashboard-home/dashboardHome"
 import DashboardAnalysis from "../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis";
 import DashboardContactUs from "../pages/dashboard-pages/dashboard-contactus/dashboardContactUs";
+import ErrorPage from "../pages/error-page/errorPage";
 
 // ==================================================================================================================
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPageLayout />,
+    errorElement:<ErrorPage/>,
     children: [
       {
         index: true,

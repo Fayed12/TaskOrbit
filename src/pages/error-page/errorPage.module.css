@@ -1,0 +1,79 @@
+:root {
+  --main-background-color: #fcf1e4;
+  --main-hover-color: #f3e7d9;
+  --brown-color: #a67443;
+  --dark-brown-color: #865d37;
+  --light-brown-color: #b78854;
+  --hover-brown-color: #eddac3;
+  --text-color: #93673e;
+}
+
+.errorPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-background-color);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.errorBox {
+  background-color: white;
+  border: 2px solid var(--hover-brown-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 60px 40px;
+  border-radius: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.code {
+  font-size: 100px;
+  color: var(--brown-color);
+  margin: 0;
+  font-weight: bold;
+  animation: bounce 2s infinite;
+}
+
+.message {
+  color: var(--text-color);
+  font-size: 18px;
+  margin: 20px 0 40px;
+}
+
+.backBtn {
+  background-color: var(--brown-color);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background-color: var(--dark-brown-color);
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
