@@ -1,13 +1,15 @@
 // local
 import style from "../../../pages/dashboard-pages/dashboard-analysis/dashboardAnalysis.module.css"
 import GeneralStatistics from "../General-statistics/generalStatistics";
+import UserStatistics from "../user-statistics/userStatistics";
 
 // ==================================================================================================================
 function TasksAnalysis() {
     return ( 
         <>
             <div className={style.TasksAnalysisContent}>
-                <GeneralStatistics/>
+                <GeneralStatistics />
+                <UserStatistics/>
         </div>
         </>
     );

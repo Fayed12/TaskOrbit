@@ -8,9 +8,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// styles
-import style from "./generalStatistics.module.css";
-
 function TasksCompletionChart({ completed, notCompleted }) {
   const pieData = [
     { name: "Completed Tasks", value: completed },
@@ -20,7 +17,7 @@ function TasksCompletionChart({ completed, notCompleted }) {
   const COLORS = ["#4CAF50", "#E57373"];
 
   return (
-    <div className={style.chartContainer}>
+    <div className="chartContainer">
       <h2>Tasks Completion Overview</h2>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>

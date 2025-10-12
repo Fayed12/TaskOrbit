@@ -11,9 +11,6 @@ import {
   Cell,
 } from "recharts";
 
-// styles
-import style from "./generalStatistics.module.css";
-
 function TasksPriorityChart({ high, medium, low }) {
   const data = [
     { name: "High", value: high },
@@ -24,7 +21,7 @@ function TasksPriorityChart({ high, medium, low }) {
   const COLORS = ["#e74c3c", "#f1c40f", "#2ecc71"];
 
   return (
-    <div className={style.chartContainer}>
+    <div className="chartContainer">
       <h2>Tasks by Priority</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart

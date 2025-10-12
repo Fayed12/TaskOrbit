@@ -1,0 +1,17 @@
+.UserStatistics {
+    padding: 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.UserStatistics .title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    width: fit-content;
+    border-bottom: 3px solid var(--text-color);
+}
+

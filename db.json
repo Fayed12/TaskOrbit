@@ -67,11 +67,11 @@
     },
     {
       "id": "8",
-      "title": "Finish reading book",
+      "title": "edited",
       "description": "Complete the last 3 chapters",
-      "completed": false,
+      "completed": true,
       "priority": "medium",
-      "dueDate": "2025-12-02",
+      "dueDate": "2025-10-06",
       "userId": "1758819252439"
     },
     {
