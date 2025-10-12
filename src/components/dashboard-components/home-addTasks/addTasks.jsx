@@ -134,7 +134,7 @@ function AddTasks({ openAddTask }) {
   useEffect(() => {
     const userInfo = JSON.parse(sessionStorage.getItem("RegisteredUser"));
     if (userInfo) {
-      setNewTaskData((prev) => ({ ...prev, userId: String(userInfo.id) }));
+      setNewTaskData((prev) => ({ ...prev, userId: userInfo.id }));
     }
   }, []);
 

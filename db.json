@@ -23,18 +23,15 @@
       "name": "mona Ahmed",
       "email": "mona@mail.com",
       "password": "monamona"
+    },
+    {
+      "id": "1760287697080",
+      "name": "ahmed fouad",
+      "email": "ahmedF@gmail.com",
+      "password": "ahmedahmed1"
     }
   ],
   "tasks": [
-    {
-      "id": "2",
-      "title": "Read new React docs",
-      "description": "Check out the latest updates in React 19",
-      "completed": true,
-      "priority": "medium",
-      "dueDate": "2025-9-20",
-      "userId": "1758859250429"
-    },
     {
       "id": "4",
       "title": "Update GitHub repo",
@@ -102,7 +99,7 @@
       "id": "12",
       "title": "Plan weekend trip",
       "description": "Choose destination and book hotel",
-      "completed": true,
+      "completed": false,
       "priority": "medium",
       "dueDate": "2025-12-04",
       "userId": "2758859253427"
@@ -117,39 +114,21 @@
       "userId": "2758859253427"
     },
     {
-      "id": "14",
-      "title": "Grocery shopping",
-      "description": "Vegetables and chicken",
-      "completed": true,
-      "priority": "medium",
-      "dueDate": "2025-12-01",
-      "userId": "2758859253427"
-    },
-    {
       "id": "15",
       "title": "Doctor checkup",
       "description": "Annual health checkup",
-      "completed": false,
+      "completed": true,
       "priority": "high",
       "dueDate": "2025-10-05",
       "userId": "2758859253427"
     },
     {
-      "id": "1760283924403",
-      "title": "study JS",
+      "id": "1760288832972",
+      "title": "study css",
       "description": "",
       "completed": false,
-      "priority": "high",
-      "dueDate": "2025-10-20",
-      "userId": "1758859250429"
-    },
-    {
-      "id": "1760283924403",
-      "title": "add Error Page",
-      "description": "",
-      "completed": false,
-      "priority": "medium",
-      "dueDate": "2025-10-27",
+      "priority": "low",
+      "dueDate": "2025-10-29",
       "userId": null
     }
   ]
