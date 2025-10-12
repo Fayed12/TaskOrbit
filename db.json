@@ -24,9 +24,9 @@
       "id": "2",
       "title": "Read new React docs",
       "description": "Check out the latest updates in React 19",
-      "completed": true,
+      "completed": false,
       "priority": "medium",
-      "dueDate": "2025-11-20",
+      "dueDate": "2025-9-20",
       "userId": "1758859250429"
     },
     {
@@ -78,18 +78,9 @@
       "id": "9",
       "title": "Prepare presentation",
       "description": "Slides for Monday meeting",
-      "completed": false,
-      "priority": "high",
-      "dueDate": "2025-12-03",
-      "userId": "1758819252439"
-    },
-    {
-      "id": "10",
-      "title": "Car maintenance",
-      "description": "Oil change and tire rotation",
       "completed": true,
-      "priority": "low",
-      "dueDate": "2025-11-29",
+      "priority": "high",
+      "dueDate": "2025-10-03",
       "userId": "1758819252439"
     },
     {
@@ -134,7 +125,7 @@
       "description": "Annual health checkup",
       "completed": false,
       "priority": "high",
-      "dueDate": "2025-12-05",
+      "dueDate": "2025-10-05",
       "userId": "2758859253427"
     }
   ]
