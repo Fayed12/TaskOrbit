@@ -1,6 +1,9 @@
 // react
 import { useState } from "react";
 
+// react router
+import { useNavigate } from "react-router";
+
 // MUI
 import EastIcon from "@mui/icons-material/East";
 
@@ -16,6 +19,7 @@ import MainInput from "../input";
 function EmailChecker({ setOpenNewPassword, setUserId }) {
   const [email, setEmail] = useState("");
   const [checkEmail, setCheckEmail] = useState(true);
+  const navigate = useNavigate()
 
   // handle email checker
   async function compareEmail() {
@@ -69,7 +73,14 @@ function EmailChecker({ setOpenNewPassword, setUserId }) {
             inpValue={email}
             inpSetValue={(e) => setEmail(e.target.value.trim())}
           />
-          <div className="flex justify-end items-center">
+          <div className="flex justify-between items-center">
+            <button
+              className={style.btn}
+              type="button"
+              onClick={() => navigate("/login")}
+            >
+              Back
+            </button>
             {checkEmail ? (
               <button type="submit" className={style.btn}>
                 <span>check</span>

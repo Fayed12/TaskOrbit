@@ -89,7 +89,7 @@ function TasksTable() {
     return (
       <div className="hidden-tasks ">
         <div className="title flex justify-center items-center">
-          <h2>Your journey starts here</h2>
+          <h2 className={style.title}>Your journey starts here</h2>
         </div>
         <div className="hide-container w-full flex justify-end items-center ">
           <button

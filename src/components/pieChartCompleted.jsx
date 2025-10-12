@@ -34,6 +34,7 @@ function TasksCompletionChart({ completed, notCompleted }) {
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
+                cursor="pointer"
               />
             ))}
           </Pie>

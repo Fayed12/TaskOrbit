@@ -32,7 +32,7 @@ function EditTask({ taskId, newTask, setNewTask, closePopup }) {
 
   // save new data to json file
   async function handleSaveDataInJSONFile() {
-    updateData(taskId, {
+    await updateData(taskId, {
       title: newTask.title,
       dueDate: newTask.dueDate,
     });

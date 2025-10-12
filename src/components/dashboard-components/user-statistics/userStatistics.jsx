@@ -24,7 +24,7 @@ function UserStatistics() {
           <div className={style.title}>
             <h1>User Statistics/</h1>
           </div>
-          <div className={style.charts}>
+          <div className="charts">
             <TasksCompletionChart
               completed={completedTasks.length}
               notCompleted={notCompletedTasks.length}

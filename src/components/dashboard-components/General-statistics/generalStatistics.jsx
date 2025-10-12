@@ -74,7 +74,7 @@ function GeneralStatistics() {
             <span>{notEndDateTasks}</span>
           </div>
         </div>
-        <div className={style.charts}>
+        <div className="charts">
           <TasksCompletionChart
             completed={completedTasks.length}
             notCompleted={notCompletedTasks.length}

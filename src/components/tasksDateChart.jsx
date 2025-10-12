@@ -35,6 +35,7 @@ function TasksEndDateChart({ endDateTasks, notEndDateTasks }) {
             strokeWidth={3}
             activeDot={{ r: 8 }}
             name="Tasks Count"
+            cursor="pointer"
           />
         </LineChart>
       </ResponsiveContainer>
